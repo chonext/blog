@@ -1,0 +1,20 @@
+.startButton {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 22px;
+  gap: 10px;
+  color: #ffffff;
+  width: 108px;
+  height: 40px;
+
+  background: linear-gradient(
+    101.26deg,
+    #2d61fc 1.01%,
+    #9362ed 45.41%,
+    #f06195 97.11%,
+    #fca1ad 136.14%
+  );
+  border-radius: 6px;
+}
