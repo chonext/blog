@@ -55,7 +55,6 @@ export default function SingleBlogPage({
 
   //#region  //*=========== Blog Language ===========
   const cleanSlug = cleanBlogPrefix(frontmatter.slug);
-  const isEnglish = cleanSlug === frontmatter.slug;
   //#endregion  //*======== Blog Language ===========
 
   //#region  //*=========== Content Meta ===========
@@ -72,7 +71,6 @@ export default function SingleBlogPage({
 
   React.useEffect(() => {
     const headings = document.querySelectorAll('.mdx h1, .mdx h2, .mdx h3');
-
     const headingArr: HeadingScrollSpy = [];
     headings.forEach((heading) => {
       const id = heading.id;
@@ -100,7 +98,7 @@ export default function SingleBlogPage({
 
       <main>
         <ReloadDevtool />
-        <section className=''>
+        <section className='pt-[60px]'>
           <div className='layout'>
             <div className='pb-4 dark:border-gray-600'>
               <CloudinaryImg
@@ -116,7 +114,7 @@ export default function SingleBlogPage({
               <p className='mt-2 text-sm text-gray-600 dark:text-gray-300'>
                 Written on{' '}
                 {format(new Date(frontmatter.publishedAt), 'MMMM dd, yyyy')} by
-                Theodorus Clarence.
+                Chocolate.
               </p>
               {frontmatter.lastUpdated && (
                 <div className='mt-2 flex flex-wrap gap-2 text-sm text-gray-700 dark:text-gray-200'>
@@ -171,19 +169,11 @@ export default function SingleBlogPage({
                   </div>
                 )}
               </div>
-              {!frontmatter?.englishOnly && (
-                <CustomLink
-                  href={`/blog/${isEnglish ? 'id-' : ''}${cleanSlug}`}
-                  className='mt-4'
-                >
-                  Read in {isEnglish ? 'Bahasa Indonesia' : 'English'}
-                </CustomLink>
-              )}
             </div>
 
             <hr className='dark:border-gray-600' />
 
-            <section className='lg:grid lg:grid-cols-[auto,250px] lg:gap-8'>
+            <section className='grid grid-cols-[auto,250px] gap-8'>
               <article className='mdx prose dark:prose-invert mx-auto mt-4 w-full transition-colors'>
                 <Component
                   components={
@@ -218,13 +208,13 @@ export default function SingleBlogPage({
                 <h2>
                   <Accent>Other posts that you might like</Accent>
                 </h2>
-                <ul className='sm:grid-cols-2 xl:grid-cols-3 mt-4 grid gap-4'>
+                <ul className='sm:grid-cols-2 mt-4 grid grid-cols-3 gap-4'>
                   {populatedRecommendations.map((post, i) => (
                     <BlogCard
                       onClick={() => {
                         trackEvent(post.slug, 'recommend');
                       }}
-                      className={clsx({ 'xl:block hidden': i === 2 })}
+                      className={clsx({ block: i === 2 })}
                       key={post.slug}
                       post={post}
                     />
@@ -233,7 +223,7 @@ export default function SingleBlogPage({
               </div>
             )}
 
-            <div className='md:flex-row-reverse md:justify-between mt-8 flex flex-col items-start gap-4'>
+            <div className='mt-8 flex flex-row-reverse items-start justify-between gap-4'>
               <CustomLink href={GITHUB_EDIT_LINK}>
                 Edit this on GitHub
               </CustomLink>

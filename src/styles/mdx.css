@@ -1,5 +1,5 @@
 .prose {
-  max-width: 50rem;
+  max-width: unset;
 }
 
 .prose code:not(:where([data-code-type='code-block'])) {
@@ -43,6 +43,7 @@
   margin-right: 0.5rem;
   width: -moz-fit-content;
   width: fit-content;
+  margin-bottom: 1rem;
 }
 
 .mdx.prose :where(h1, h2, h3, h4) > a {
