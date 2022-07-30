@@ -8,7 +8,7 @@ module.exports = {
 
   // Uncoment to add domain whitelist
   images: {
-    domains: ['res.cloudinary.com', 'cdn.jsdelivr.net'],
+    domains: ['res.cloudinary.com'],
   },
 
   // SVGR
