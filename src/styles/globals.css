@@ -44,9 +44,35 @@
     cursor: url('/images/new-tab.png') 10 10, pointer;
   }
 
+  /* #region  /**=========== Default Typography =========== */
+  h1,
+  .h1 {
+    @apply font-primary text-4xl font-bold;
+  }
+
+  h2,
+  .h2 {
+    @apply font-primary text-3xl font-bold;
+  }
+
+  h3,
+  .h3 {
+    @apply font-primary text-2xl font-bold;
+  }
+
+  h4,
+  .h4 {
+    @apply font-primary text-lg font-bold;
+  }
+
+  body,
+  .body {
+    @apply font-primary text-base;
+  }
+  /* #endregion  /**======== Default Typography =========== */
+
   .layout {
-    /* 1100px */
-    max-width: 68.75rem;
+    max-width: 1200px;
     @apply mx-auto w-11/12;
   }
 
@@ -84,3 +110,43 @@
     background-size: 0 2px, 100% 2px;
   }
 }
+
+/* #region  /**=========== Fade In =========== */
+[data-fade] {
+  @apply translate-y-10 opacity-0 transition duration-[400ms] ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100;
+}
+.fade-in-start [data-fade] {
+  @apply translate-y-0 opacity-100;
+}
+.fade-in-start [data-fade='1'] {
+  transition-delay: 100ms;
+}
+.fade-in-start [data-fade='2'] {
+  transition-delay: 200ms;
+}
+.fade-in-start [data-fade='3'] {
+  transition-delay: 300ms;
+}
+.fade-in-start [data-fade='4'] {
+  transition-delay: 400ms;
+}
+.fade-in-start [data-fade='5'] {
+  transition-delay: 500ms;
+}
+.fade-in-start [data-fade='6'] {
+  transition-delay: 600ms;
+}
+.fade-in-start [data-fade='7'] {
+  transition-delay: 700ms;
+}
+.fade-in-start [data-fade='8'] {
+  transition-delay: 800ms;
+}
+/* #endregion  /**======== Fade In =========== */
+
+/* #region  /**=========== Animate Shadow =========== */
+.animate-shadow {
+  @apply after:absolute after:inset-0 after:z-[-1] after:opacity-0 after:transition-opacity hover:after:opacity-100;
+  @apply after:shadow-md dark:after:shadow-none;
+}
+/* #endregion  /**======== Animate Shadow =========== */

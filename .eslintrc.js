@@ -16,7 +16,7 @@ module.exports = {
     'no-unused-vars': 'off',
     'no-console': 'warn',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
-
+    'react/no-unescaped-entities': 'off',
     'react/display-name': 'off',
     'react/jsx-curly-brace-presence': [
       'warn',
@@ -37,7 +37,7 @@ module.exports = {
     ],
     //#endregion  //*======== Unused Import ===========
 
-    //#region  //*=========== Import Sort ===========
+    //#region  //*=========== Sort Import ===========
     'simple-import-sort/exports': 'warn',
     'simple-import-sort/imports': [
       'warn',
@@ -52,9 +52,7 @@ module.exports = {
           // static data
           ['^@/data'],
           // components
-          ['^@/components', '^@/container'],
-          // zustand store
-          ['^@/store'],
+          ['^@/components'],
           // Other imports
           ['^@/'],
           // relative paths up until 3 level
@@ -74,7 +72,7 @@ module.exports = {
         ],
       },
     ],
-    //#endregion  //*======== Import Sort ===========
+    //#endregion  //*======== Sort Import ===========
   },
   globals: {
     React: true,
