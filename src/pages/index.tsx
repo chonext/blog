@@ -1,8 +1,6 @@
 import * as React from 'react';
 import { SiGithub, SiWechat } from 'react-icons/si';
 
-import style from './style.module.scss';
-
 import { trackEvent } from '@/lib/analytics';
 import clsxm from '@/lib/clsxm';
 import useLoaded from '@/hooks/useLoaded';
@@ -20,13 +18,7 @@ export default function HomePage() {
     <Layout>
       <Seo />
       <main>
-        <section
-          className={clsxm(
-            style.container,
-            'min-h-screen',
-            isLoaded && 'fade-in-start'
-          )}
-        >
+        <section className={clsxm('min-h-screen', isLoaded && 'fade-in-start')}>
           <div className='flex min-h-screen flex-col justify-center text-center'>
             <article className=' layout flex flex-col items-start'>
               <h2 className='text-2xl' data-fade='1'>

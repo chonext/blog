@@ -1,21 +1,24 @@
-import { useRecoilValue } from 'recoil';
+import { useScroll } from 'ahooks';
+import { useMemo } from 'react';
 
 import clsxm from '@/lib/clsxm';
 
 import HeaderNav from '@/components/layout/hader-nav';
 import HeaderButton from '@/components/layout/header-button';
 
-import { isNavHoverAtom } from '@/store';
-
 export default function Header() {
-  const isNavHover = useRecoilValue(isNavHoverAtom);
+  const docScroll = useScroll();
+
+  const isDocHover = useMemo(() => {
+    if (docScroll) return !!docScroll.top;
+  }, [docScroll]);
 
   return (
     <header
       className={clsxm(
         'fixed top-0 z-50 w-full bg-transparent',
-        isNavHover &&
-          'solid border-b border-black border-opacity-[0.12] bg-white'
+        isDocHover &&
+          'solid border-b border-black border-opacity-[0.12] bg-white bg-opacity-[98] backdrop-blur-[40px]'
       )}
     >
       <div className='layout flex h-[60px] items-center justify-between leading-[60px]'>

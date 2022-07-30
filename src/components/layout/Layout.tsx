@@ -8,9 +8,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   // Put Header or Footer Here
   return (
     <RecoilRoot>
-      <Header />
-      {children}
-      <Footer />
+      <div className='next-container'>
+        <Header />
+        {children}
+        <Footer />
+      </div>
     </RecoilRoot>
   );
 }

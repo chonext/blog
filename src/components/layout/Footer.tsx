@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className='absolute bottom-2 flex w-full justify-center text-gray-700'>
+    <footer className='relative bottom-2 flex w-full justify-center text-gray-700'>
       © {new Date().getFullYear()} By{'  '}
       <a
         href='https://github.com/Chocolate1999'
