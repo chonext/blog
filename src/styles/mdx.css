@@ -55,6 +55,14 @@ li {
   border-image: linear-gradient(to right, #00ff9480, #00e0f380, #00c4fd80) 1;
 }
 
+.mdx.prose h2 {
+  font-size: 20px;
+}
+
+.mdx.prose h3 {
+  font-size: 1em;
+}
+
 .mdx.prose :where(h1, h2, h3, h4) {
   color: #06f;
   scroll-margin-top: 100px;
