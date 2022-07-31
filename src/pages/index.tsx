@@ -21,15 +21,15 @@ export default function HomePage() {
         <section className={clsxm('min-h-screen', isLoaded && 'fade-in-start')}>
           <div className='flex min-h-screen flex-col justify-center text-center'>
             <article className=' layout flex flex-col items-start'>
-              <h2 className='text-2xl' data-fade='1'>
+              <h2 className='text-2x dark:text-gray-100' data-fade='1'>
                 Hi!
               </h2>
-              <h1 className=' mt-1 text-3xl' data-fade='2'>
+              <h1 className=' mt-1 text-3xl dark:text-gray-100' data-fade='2'>
                 You can call me Chocolate
               </h1>
               <p
                 className={clsxm(
-                  ' mt-6 max-w-2xl text-gray-700 dark:text-gray-200',
+                  ' mt-6 max-w-2xl text-gray-700 dark:text-gray-300',
                   '2xl:text-xl text-left text-lg'
                 )}
                 data-fade='3'
@@ -40,7 +40,7 @@ export default function HomePage() {
               </p>
               <p
                 className={clsxm(
-                  ' mt-2 max-w-2xl text-gray-700 dark:text-gray-200',
+                  ' mt-2 max-w-2xl text-gray-700 dark:text-gray-300',
                   '2xl:text-xl text-left text-lg'
                 )}
                 data-fade='4'

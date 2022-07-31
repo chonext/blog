@@ -26,7 +26,7 @@ export default function IndexPage({
       <main>
         <section className={clsx(isLoaded && 'fade-in-start min-h-screen')}>
           <div className='layout mt-[60px] py-12 '>
-            <h1 className='text-5xl' data-fade='0'>
+            <h1 className='text-5xl dark:text-gray-100' data-fade='0'>
               Blog
             </h1>
             <p className='mt-2 text-gray-600 dark:text-gray-300' data-fade='1'>

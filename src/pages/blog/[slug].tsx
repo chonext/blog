@@ -108,7 +108,9 @@ export default function SingleBlogPage({
                 aspect={{ height: 2, width: 5 }}
               />
 
-              <h1 className='mt-4 text-3xl'>{frontmatter.title}</h1>
+              <h1 className='mt-4 text-3xl dark:text-gray-100'>
+                {frontmatter.title}
+              </h1>
 
               <p className='mt-2 text-sm text-gray-600 dark:text-gray-300'>
                 Written on{' '}
@@ -169,7 +171,7 @@ export default function SingleBlogPage({
             <hr className='dark:border-gray-600' />
 
             <section className='grid grid-cols-[auto,250px] gap-8'>
-              <article className='mdx prose dark:prose-invert mx-auto mt-4 w-full transition-colors'>
+              <article className='mdx prose dark:prose-invert mx-auto mt-4 w-full rounded-[8px] bg-white px-4 py-6 shadow transition-colors dark:bg-[#121212]'>
                 <Component
                   components={
                     {
@@ -181,7 +183,7 @@ export default function SingleBlogPage({
               </article>
 
               <aside className='py-4'>
-                <div className='sticky top-36'>
+                <div className='sticky top-3 rounded-[8px] bg-white px-4 py-5 shadow dark:bg-[#121212]'>
                   <TableOfContents
                     toc={toc}
                     minLevel={minLevel}

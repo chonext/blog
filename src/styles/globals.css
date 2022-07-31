@@ -83,6 +83,7 @@
       rgba(7, 179, 155, 0.1) 86%,
       rgba(109, 186, 130, 0.1)
     );
+    @apply dark:bg-[#222] dark:bg-none;
   }
 
   .layout {

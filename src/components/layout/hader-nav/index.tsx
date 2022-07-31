@@ -11,9 +11,11 @@ const HeaderNav = () => {
     <div className='flex h-full w-auto flex-row items-center justify-center'>
       {navVal.map((item) => {
         return (
-          <div className='pl-[32px]' key={item.name}>
+          <div className='pr-[32px]' key={item.name}>
             <UnstyledLink href={item.link}>
-              <span className='hover:text-[#0066ff]'>{item.name}</span>
+              <span className='hover:text-[#0066ff] dark:text-gray-100'>
+                {item.name}
+              </span>
             </UnstyledLink>
           </div>
         );
