@@ -2,8 +2,20 @@
   max-width: unset;
 }
 
+.prose p,
+li {
+  color: #202d40;
+  margin-bottom: 1rem;
+}
+
 .prose code:not(:where([data-code-type='code-block'])) {
-  @apply rounded-md border px-1 py-1 dark:border-gray-600;
+  @apply border px-1 py-1 dark:border-gray-600;
+  font-size: 85%;
+  padding: 0.2em 0;
+  color: #687168;
+  background-color: #def5df;
+  border-radius: 4px;
+  font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
 }
 
 .prose a {
@@ -26,8 +38,15 @@
 
 .prose blockquote {
   border-style: solid;
-  border-width: 0 0 0 0.25rem;
-  border-image: linear-gradient(to top, #00ff94, #00e0f3, #00c4fd) 1;
+  border-width: 0 0 0 0.25em;
+  color: #777;
+  border-color: #ddd;
+  margin-bottom: 1rem;
+  padding: 0 1em;
+}
+
+.prose blockquote p {
+  color: #777;
 }
 
 .prose hr {
@@ -37,6 +56,7 @@
 }
 
 .mdx.prose :where(h1, h2, h3, h4) {
+  color: #06f;
   scroll-margin-top: 100px;
   position: relative;
   display: block;
@@ -44,10 +64,15 @@
   width: -moz-fit-content;
   width: fit-content;
   margin-bottom: 1rem;
+  margin-top: 1.5rem;
 }
 
 .mdx.prose :where(h1, h2, h3, h4) > a {
   border-bottom: none;
+}
+
+.mdx.prose :where(h1, h2, h3, h4):hover {
+  color: #3385ff;
 }
 
 /* Custom Heading Style for Projects */
@@ -72,11 +97,6 @@
   position: absolute;
   background-image: none;
   transition: none;
-}
-
-.hash-anchor:hover {
-  background-image: linear-gradient(to right, #00ff94, #00e0f3, #00c4fd);
-  background-size: 100% 2px;
 }
 
 .hash-anchor:hover:after,

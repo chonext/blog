@@ -69,11 +69,11 @@ export default function BlogCard({
           <div className='mt-2 flex items-center justify-start gap-2 text-sm font-medium text-gray-600 dark:text-gray-300'>
             <div className='flex items-center gap-1'>
               <HiOutlineClock className='inline-block text-base' />
-              <Accent>{post.readingTime.text}</Accent>
+              {post.readingTime.text}
             </div>
             <div className='flex items-center gap-1'>
               <HiOutlineEye className='inline-block text-base' />
-              <Accent>{post?.views?.toLocaleString() ?? '–––'} views</Accent>
+              {post?.views?.toLocaleString() ?? '-'} views
             </div>
           </div>
           <p className='mt-4 mb-2 text-sm text-gray-600 dark:text-gray-300'>

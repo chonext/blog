@@ -13,9 +13,8 @@ import useContentMeta from '@/hooks/useContentMeta';
 import useInjectContentMeta from '@/hooks/useInjectContentMeta';
 import useScrollSpy from '@/hooks/useScrollspy';
 
-import Accent from '@/components/Accent';
 import BlogCard from '@/components/content/blog/BlogCard';
-import Comment from '@/components/content/Comment';
+// import Comment from '@/components/content/Comment';
 import LikeButton from '@/components/content/LikeButton';
 import MDXComponents from '@/components/content/MDXComponents';
 import ReloadDevtool from '@/components/content/ReloadDevtool';
@@ -139,7 +138,7 @@ export default function SingleBlogPage({
               <div className='mt-6 flex items-center justify-start gap-2 text-sm font-medium text-gray-600 dark:text-gray-300'>
                 <div className='flex items-center gap-1'>
                   <HiOutlineClock className='inline-block text-base' />
-                  <Accent>{frontmatter.readingTime.text}</Accent>
+                  {frontmatter.readingTime.text}
                 </div>
                 {meta?.devtoViews ? (
                   <Tooltip
@@ -155,17 +154,13 @@ export default function SingleBlogPage({
                   >
                     <div className='flex items-center gap-1'>
                       <HiOutlineEye className='inline-block text-base' />
-                      <Accent>
-                        {meta?.views?.toLocaleString() ?? '–––'} views
-                      </Accent>
+                      {meta?.views?.toLocaleString() ?? '-'} views
                     </div>
                   </Tooltip>
                 ) : (
                   <div className='flex items-center gap-1'>
                     <HiOutlineEye className='inline-block text-base' />
-                    <Accent>
-                      {meta?.views?.toLocaleString() ?? '–––'} views
-                    </Accent>
+                    {meta?.views?.toLocaleString() ?? '-'} views
                   </div>
                 )}
               </div>
@@ -190,7 +185,7 @@ export default function SingleBlogPage({
                   <TableOfContents
                     toc={toc}
                     minLevel={minLevel}
-                    activeSection={activeSection}
+                    activeSection={decodeURI(activeSection as string)}
                   />
                   <div className='flex items-center justify-center py-8'>
                     <LikeButton slug={contentSlug} />
@@ -199,15 +194,13 @@ export default function SingleBlogPage({
               </aside>
             </section>
 
-            <figure className='mt-12'>
+            {/* <figure className='mt-12'>
               <Comment key={frontmatter.slug} />
-            </figure>
+            </figure> */}
 
             {populatedRecommendations.length > 0 && (
               <div className='mt-20'>
-                <h2>
-                  <Accent>Other posts that you might like</Accent>
-                </h2>
+                <h2>Other posts that you might like</h2>
                 <ul className='sm:grid-cols-2 mt-4 grid grid-cols-3 gap-4'>
                   {populatedRecommendations.map((post, i) => (
                     <BlogCard

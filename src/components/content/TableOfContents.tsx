@@ -59,7 +59,7 @@ export default function TableOfContents({
       id='toc-container'
       className='block max-h-[calc(100vh-9rem-113px)] overflow-auto pb-4'
     >
-      <h3 className='md:text-xl text-gray-900 dark:text-gray-100'>
+      <h3 className='text-xl text-gray-900 dark:text-gray-100'>
         Table of Contents
       </h3>
       <div className='mt-4 flex flex-col space-y-2 text-sm'>
