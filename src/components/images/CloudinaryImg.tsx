@@ -40,7 +40,7 @@ export default function CloudinaryImg({
 
   const urlBlurred = buildUrl(publicId, {
     cloud: {
-      cloudName: 'theodorusclarence',
+      cloudName: 'chocolate1999',
     },
     transformations: {
       effect: {
@@ -54,7 +54,7 @@ export default function CloudinaryImg({
   });
   const url = buildUrl(publicId, {
     cloud: {
-      cloudName: 'theodorusclarence',
+      cloudName: 'chocolate1999',
     },
     transformations: {
       rawTransformation: aspect
