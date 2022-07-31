@@ -183,7 +183,7 @@ export default function SingleBlogPage({
               </article>
 
               <aside className='py-4'>
-                <div className='sticky top-3 rounded-[8px] bg-white px-4 py-5 shadow dark:bg-[#121212]'>
+                <div className='sticky top-[84px] rounded-[8px] bg-white px-4 py-5 shadow dark:bg-[#121212]'>
                   <TableOfContents
                     toc={toc}
                     minLevel={minLevel}
@@ -201,7 +201,7 @@ export default function SingleBlogPage({
             </figure> */}
 
             {populatedRecommendations.length > 0 && (
-              <div className='mt-20'>
+              <div className='mt-20 dark:text-gray-200'>
                 <h2>Other posts that you might like</h2>
                 <ul className='sm:grid-cols-2 mt-4 grid grid-cols-3 gap-4'>
                   {populatedRecommendations.map((post, i) => (

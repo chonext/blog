@@ -6,6 +6,7 @@
 li {
   @apply dark:text-gray-400;
   margin-bottom: 1rem;
+  line-height: 2;
 }
 
 .shadow {
@@ -53,6 +54,7 @@ li {
 .prose blockquote p {
   color: #777;
   padding: 0.5rem 0;
+  line-height: 2;
   @apply dark:text-gray-500;
 }
 
