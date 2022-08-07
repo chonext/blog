@@ -97,8 +97,8 @@ export default function SingleBlogPage({
       <main>
         <ReloadDevtool />
         <section className='pt-[60px]'>
-          <div className='layout'>
-            <div className='bg-white p-4 shadow dark:border-gray-600'>
+          <div className='layout  pt-8'>
+            <div className='rounded-[8px] bg-white p-4 shadow dark:border-gray-600'>
               <h1 className='mt-4 text-3xl dark:text-gray-100'>
                 {frontmatter.title}
               </h1>
