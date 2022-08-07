@@ -14,7 +14,7 @@ import useInjectContentMeta from '@/hooks/useInjectContentMeta';
 import useScrollSpy from '@/hooks/useScrollspy';
 
 import BlogCard from '@/components/content/blog/BlogCard';
-// import Comment from '@/components/content/Comment';
+import Comment from '@/components/content/Comment';
 import LikeButton from '@/components/content/LikeButton';
 import MDXComponents from '@/components/content/MDXComponents';
 import ReloadDevtool from '@/components/content/ReloadDevtool';
@@ -187,9 +187,9 @@ export default function SingleBlogPage({
               </aside>
             </section>
 
-            {/* <figure className='mt-12'>
+            <figure className='mt-12 rounded-[8px] bg-white p-6 shadow'>
               <Comment key={frontmatter.slug} />
-            </figure> */}
+            </figure>
 
             {populatedRecommendations.length > 0 && (
               <div className='mt-20 dark:text-gray-200'>

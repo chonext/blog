@@ -1,4 +1,5 @@
-import { Giscus, Theme } from '@giscus/react';
+import { Theme } from '@giscus/react';
+import Giscus from '@giscus/react';
 import { useTheme } from 'next-themes';
 
 import { commentFlag } from '@/constants/env';
@@ -6,16 +7,17 @@ import { commentFlag } from '@/constants/env';
 export default function Comment() {
   const { theme } = useTheme();
 
-  return commentFlag ? (
+  return !commentFlag ? (
     <Giscus
       key={theme}
-      repo='theodorusclarence/theodorusclarence.com'
-      repoId='MDEwOlJlcG9zaXRvcnkzMzAyMTQyNDc='
+      repo='Chocolate1999/nextjs-tailwind-blog'
+      repoId='R_kgDOHuqHfA'
       category='General'
-      categoryId='DIC_kwDOE66rZ84B--B0'
+      categoryId='DIC_kwDOHuqHfM4CQqq4'
       mapping='pathname'
       reactionsEnabled='0'
       emitMetadata='0'
+      loading='lazy'
       theme={theme as Theme}
     />
   ) : null;
