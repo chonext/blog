@@ -21,7 +21,6 @@ import ReloadDevtool from '@/components/content/ReloadDevtool';
 import TableOfContents, {
   HeadingScrollSpy,
 } from '@/components/content/TableOfContents';
-import CloudinaryImg from '@/components/images/CloudinaryImg';
 import Layout from '@/components/layout/Layout';
 import CustomLink from '@/components/links/CustomLink';
 import UnstyledLink from '@/components/links/UnstyledLink';
@@ -99,15 +98,7 @@ export default function SingleBlogPage({
         <ReloadDevtool />
         <section className='pt-[60px]'>
           <div className='layout'>
-            <div className='pb-4 dark:border-gray-600'>
-              <CloudinaryImg
-                publicId={`banner/${frontmatter.banner}`}
-                alt={`Photo from unsplash: ${frontmatter.banner}`}
-                width={1200}
-                height={(1200 * 2) / 5}
-                aspect={{ height: 2, width: 5 }}
-              />
-
+            <div className='bg-white p-4 shadow dark:border-gray-600'>
               <h1 className='mt-4 text-3xl dark:text-gray-100'>
                 {frontmatter.title}
               </h1>
