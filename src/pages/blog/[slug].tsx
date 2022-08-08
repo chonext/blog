@@ -98,7 +98,7 @@ export default function SingleBlogPage({
         <ReloadDevtool />
         <section className='pt-[60px]'>
           <div className='layout  pt-8'>
-            <div className='rounded-[8px] bg-white p-4 shadow dark:border-gray-600'>
+            <div className='rounded-[8px] bg-white p-4 shadow dark:border-gray-600 dark:bg-[#121212]'>
               <h1 className='mt-4 text-3xl dark:text-gray-100'>
                 {frontmatter.title}
               </h1>
@@ -159,8 +159,6 @@ export default function SingleBlogPage({
               </div>
             </div>
 
-            <hr className='dark:border-gray-600' />
-
             <section className='grid grid-cols-[auto,250px] gap-8'>
               <article className='mdx prose dark:prose-invert mx-auto mt-4 w-full rounded-[8px] bg-white px-4 py-6 shadow transition-colors dark:bg-[#121212]'>
                 <Component
@@ -187,7 +185,7 @@ export default function SingleBlogPage({
               </aside>
             </section>
 
-            <figure className='mt-12 rounded-[8px] bg-white p-6 shadow'>
+            <figure className='mt-12 rounded-[8px] bg-white p-6 shadow dark:bg-[#121212]'>
               <Comment key={frontmatter.slug} />
             </figure>
 
