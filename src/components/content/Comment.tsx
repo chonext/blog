@@ -7,7 +7,7 @@ import { commentFlag } from '@/constants/env';
 export default function Comment() {
   const { theme } = useTheme();
 
-  return !commentFlag ? (
+  return commentFlag ? (
     <Giscus
       key={theme}
       repo='Chocolate1999/nextjs-tailwind-blog'

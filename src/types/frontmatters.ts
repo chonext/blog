@@ -55,6 +55,18 @@ export type ProjectFrontmatter = {
   youtube?: string;
 };
 
+export type projectItemType = {
+  title: string;
+  description: string;
+  link: string;
+  techs: string;
+};
+
+export type ProjectsType = {
+  category: string;
+  child: Array<projectItemType>;
+};
+
 export type ProjectType = {
   code: string;
   frontmatter: ProjectFrontmatter;

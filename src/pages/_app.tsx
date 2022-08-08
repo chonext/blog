@@ -1,6 +1,7 @@
 import { AppProps } from 'next/app';
 import Router from 'next/router';
 import nProgress from 'nprogress';
+import { RecoilRoot } from 'recoil';
 
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
 import 'react-tippy/dist/tippy.css';
@@ -18,7 +19,11 @@ Router.events.on('routeChangeComplete', nProgress.done);
  */
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />;
+  return (
+    <RecoilRoot>
+      <Component {...pageProps} />
+    </RecoilRoot>
+  );
 }
 
 export default MyApp;

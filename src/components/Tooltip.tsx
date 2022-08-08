@@ -22,17 +22,7 @@ export default function Tooltip({
     <TippyTooltip
       trigger='mouseenter'
       interactive
-      html={
-        <div
-          className={clsx(
-            className,
-            'inline-block rounded-md bg-white p-2 text-gray-600 shadow-md dark:bg-dark dark:text-gray-200',
-            'border dark:border-gray-600 '
-          )}
-        >
-          {content}
-        </div>
-      }
+      html={<div className={clsx(className)}>{content}</div>}
       {...rest}
     >
       {withUnderline ? (
