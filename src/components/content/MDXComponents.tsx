@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 
-import Quiz from '@/components/content/blog/Quiz';
 import GithubCard from '@/components/content/card/GithubCard';
 import CustomCode, { Pre } from '@/components/content/CustomCode';
 import SplitImage, { Split } from '@/components/content/SplitImage';
@@ -20,7 +19,6 @@ const MDXComponents = {
   Split,
   TechIcons,
   GithubCard,
-  Quiz,
 };
 
 export default MDXComponents;
