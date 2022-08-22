@@ -3,21 +3,21 @@ import { useRecoilValue } from 'recoil';
 
 import useLoaded from '@/hooks/useLoaded';
 
-import ProjectCard from '@/components/content/projects/ProjectCard';
+import CollectionCard from '@/components/content/collections/CollectionCard';
 import Layout from '@/components/layout/Layout';
 import Seo from '@/components/Seo';
 
-import { projectsAtom } from '@/store/projects';
+import { collectionsAtom } from '@/store/collections';
 
 export default function ProjectsPage() {
   const isLoaded = useLoaded();
-  const projects = useRecoilValue(projectsAtom);
+  const collections = useRecoilValue(collectionsAtom);
 
   return (
     <Layout>
       <Seo
         templateTitle='Projects'
-        description="Showcase of my projects on front-end development that I'm proud of."
+        description="Showcase of my collections on front-end development that I'm proud of."
       />
 
       <main>
@@ -30,15 +30,15 @@ export default function ProjectsPage() {
               Showcase some of my favorite useful websites.
             </p>
 
-            {projects.map((project, index) => (
-              <div key={project.category}>
+            {collections.map((collection, index) => (
+              <div key={collection.category}>
                 <h1
                   className='my-6 text-xl dark:text-gray-100'
                   data-fade={index + 1}
                 >
-                  {project.category}
+                  {collection.category}
                 </h1>
-                <ProjectCard project={project} />
+                <CollectionCard collection={collection} />
               </div>
             ))}
           </div>
