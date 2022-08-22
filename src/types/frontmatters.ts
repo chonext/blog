@@ -67,6 +67,18 @@ export type ProjectsType = {
   child: Array<projectItemType>;
 };
 
+export type collectionItemType = {
+  title: string;
+  description: string;
+  link: string;
+  techs: string;
+};
+
+export type CollectionsType = {
+  category: string;
+  child: Array<collectionItemType>;
+};
+
 export type ProjectType = {
   code: string;
   frontmatter: ProjectFrontmatter;
