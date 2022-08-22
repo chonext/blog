@@ -19,6 +19,7 @@ export default function Tooltip({
   ...rest
 }: TooltipTextProps) {
   return (
+    // @ts-ignore
     <TippyTooltip
       trigger='mouseenter'
       interactive
