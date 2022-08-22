@@ -52,6 +52,7 @@
     "@types/lodash": "^4.14.182",
     "@types/nprogress": "^0.2.0",
     "@types/react": "^18.0.15",
+    "@types/react-copy-to-clipboard": "^5.0.4",
     "@types/umami": "^0.1.0",
     "@typescript-eslint/eslint-plugin": "^5.30.7",
     "@typescript-eslint/parser": "^5.30.7",
