@@ -46,7 +46,6 @@ export default function ProjectCard({ project, className }: ProjectCardProps) {
           </UnstyledLink>
         </li>
       ))}
-      ;
     </ul>
   );
 }

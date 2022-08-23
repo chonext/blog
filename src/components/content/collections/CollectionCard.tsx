@@ -49,7 +49,6 @@ export default function CollectionCard({
           </UnstyledLink>
         </li>
       ))}
-      ;
     </ul>
   );
 }
