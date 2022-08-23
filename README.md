@@ -16,7 +16,7 @@ The most beautiful minimalist blog in modern built with Nextjs and tailwindcss.
  🧑‍💻👩‍💻👨‍💻
 </p>
 
-## Features
+## 🚀 Features
 
 - 📝 MDX support
 - 🦾 TypeScript, of course
@@ -25,7 +25,7 @@ The most beautiful minimalist blog in modern built with Nextjs and tailwindcss.
 - ⚙️ Eslint + Prittier
 - 🧑‍💻 Continuous renovation
 
-## Tech Stack
+## 🦄 Tech Stack
 
 - [Next.js](https://nextjs.org/) - The React Framework.
 - [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework for rapidly building custom user interfaces.
@@ -39,6 +39,6 @@ The most beautiful minimalist blog in modern built with Nextjs and tailwindcss.
 
 ![Alt](https://repobeats.axiom.co/api/embed/0d333a7111c72a0c7ed603bfab7298225a46a856.svg 'Repobeats analytics image')
 
-## License
+## 📄 License
 
 [MIT License](https://github.com/Chocolate1999/nextjs-tailwind-blog/blob/main/LICENSE) © 2022-PRESENT [Chocolate](https://github.com/Chocolate1999)
