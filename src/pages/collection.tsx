@@ -7,7 +7,7 @@ import CollectionCard from '@/components/content/collections/CollectionCard';
 import Layout from '@/components/layout/Layout';
 import Seo from '@/components/Seo';
 
-import { collectionsAtom } from '@/store/collections';
+import { collectionsAtom } from '@/store/collections/collections';
 
 export default function ProjectsPage() {
   const isLoaded = useLoaded();

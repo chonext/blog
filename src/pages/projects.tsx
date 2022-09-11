@@ -3,7 +3,7 @@ import { useRecoilValue } from 'recoil';
 
 import useLoaded from '@/hooks/useLoaded';
 
-import ProjectCard from '@/components/content/projects/ProjectCard';
+import ProjectCard from '@/components/content/projects/ProjectItem';
 import Layout from '@/components/layout/Layout';
 import Seo from '@/components/Seo';
 
@@ -19,28 +19,27 @@ export default function ProjectsPage() {
         templateTitle='Projects'
         description="Showcase of my projects on front-end development that I'm proud of."
       />
-
       <main>
-        <section className={clsx(isLoaded && 'fade-in-start min-h-screen')}>
-          <div className='layout mt-[60px] min-h-screen py-12'>
-            <h1 className='text-5xl dark:text-gray-100' data-fade='0'>
-              Projects
-            </h1>
-            <p data-fade='1' className='mt-2 text-gray-600 dark:text-gray-300'>
-              Showcase of my works on frontend development.
-            </p>
-
-            {projects.map((project, index) => (
-              <div key={project.category}>
-                <h1
-                  className='my-6 text-xl dark:text-gray-100'
-                  data-fade={index + 1}
-                >
-                  {project.category}
-                </h1>
-                <ProjectCard project={project} />
-              </div>
-            ))}
+        <section className={clsx(isLoaded && 'fade-in-start')}>
+          <div className='layout'>
+            <div className='mx-8 mt-12 grid max-w-[820px] gap-4' data-fade='1'>
+              <p className='text-[32px]'>Projects</p>
+              <p className='mb-[32px] italic opacity-50'>
+                Showcase of my projects on front-end development that I'm proud
+                of.
+              </p>
+              {projects?.map((project, index) => (
+                <div key={project.category}>
+                  <h1
+                    className='text-[18px] text-[#555] dark:text-[#aaa]'
+                    data-fade={index + 1}
+                  >
+                    {project.category}
+                  </h1>
+                  <ProjectCard project={project} />
+                </div>
+              ))}
+            </div>
           </div>
         </section>
       </main>

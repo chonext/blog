@@ -59,7 +59,8 @@ export type projectItemType = {
   title: string;
   description: string;
   link: string;
-  techs: string;
+  // eslint-disable-next-line
+  icon: React.ReactComponentElement<any>;
 };
 
 export type ProjectsType = {
