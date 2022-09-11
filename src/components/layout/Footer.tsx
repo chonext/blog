@@ -1,7 +1,9 @@
+import UnderlineLink from '@/components/links/UnderlineLink';
+
 export default function Footer() {
   return (
     <footer className='mt-16 text-right text-[#b3b3b3] dark:text-gray-200'>
-      <section className='flex flex-col'>
+      <section className='flex flex-col items-end'>
         <div>
           <a
             href='https://creativecommons.org/licenses/by-nc-sa/4.0/'
@@ -17,12 +19,12 @@ export default function Footer() {
             className='pl-1'
             rel='noreferrer'
           >
-            © Chocolate
+            © Yang Chao Yi
           </a>
         </div>
-        <a href='https://beian.miit.gov.cn/' rel='noreferrer' target='_blank'>
+        <UnderlineLink href='https://beian.miit.gov.cn/'>
           湘ICP备20002952号
-        </a>
+        </UnderlineLink>
       </section>
     </footer>
   );

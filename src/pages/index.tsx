@@ -1,15 +1,11 @@
 import * as React from 'react';
-import { SiGithub, SiWechat } from 'react-icons/si';
 
-import { trackEvent } from '@/lib/analytics';
 import clsxm from '@/lib/clsxm';
 import useLoaded from '@/hooks/useLoaded';
 
 import Layout from '@/components/layout/Layout';
 import CustomLink from '@/components/links/CustomLink';
-import UnstyledLink from '@/components/links/UnstyledLink';
 import Seo from '@/components/Seo';
-import Tooltip from '@/components/Tooltip';
 
 export default function HomePage() {
   const isLoaded = useLoaded();
@@ -54,47 +50,6 @@ export default function HomePage() {
                   <CustomLink href='/about' className='ml-6'>
                     Learn more about me
                   </CustomLink>
-                </div>
-                <div className='flex'>
-                  <Tooltip content={<p>Chocolate1999</p>}>
-                    <div
-                      data-fade='6'
-                      className='mt-8 flex flex-wrap gap-4 gap-y-2'
-                    >
-                      <UnstyledLink
-                        href='https://github.com/Chocolate1999'
-                        className={clsxm(
-                          'inline-flex items-center gap-1 text-base font-medium',
-                          'text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white',
-                          'focus:outline-none focus-visible:ring focus-visible:ring-primary-300',
-                          'transition-colors'
-                        )}
-                        onClick={() => {
-                          trackEvent('Social Link: Github', 'link');
-                        }}
-                      >
-                        <SiGithub className='shrink-0' />
-                      </UnstyledLink>
-                    </div>
-                  </Tooltip>
-                  <Tooltip content={<p>小狮子前端</p>}>
-                    <div
-                      data-fade='6'
-                      className='mt-8 ml-4 flex flex-wrap gap-4 gap-y-2'
-                    >
-                      <UnstyledLink
-                        href='https://github.com/Chocolate1999'
-                        className={clsxm(
-                          'inline-flex items-center gap-1 text-base font-medium',
-                          'text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white',
-                          'focus:outline-none focus-visible:ring focus-visible:ring-primary-300',
-                          'transition-colors'
-                        )}
-                      >
-                        <SiWechat className='shrink-0' />
-                      </UnstyledLink>
-                    </div>
-                  </Tooltip>
                 </div>
               </div>
             </article>

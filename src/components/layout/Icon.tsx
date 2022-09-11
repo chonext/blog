@@ -1,6 +1,7 @@
 import { BsGithub } from 'react-icons/bs';
-import { FiSun } from 'react-icons/fi';
 import { SiBilibili } from 'react-icons/si';
+
+import ThemeButton from '@/components/buttons/ThemeButton';
 
 const Logo = () => {
   return (
@@ -19,7 +20,7 @@ const Logo = () => {
       >
         <SiBilibili />
       </a>
-      <FiSun />
+      <ThemeButton />
     </div>
   );
 };

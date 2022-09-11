@@ -1,5 +1,6 @@
 import { AppProps } from 'next/app';
 import Router from 'next/router';
+import { ThemeProvider } from 'next-themes';
 import nProgress from 'nprogress';
 import { RecoilRoot } from 'recoil';
 
@@ -21,7 +22,9 @@ Router.events.on('routeChangeComplete', nProgress.done);
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <RecoilRoot>
-      <Component {...pageProps} />
+      <ThemeProvider attribute='class' enableSystem={false}>
+        <Component {...pageProps} />
+      </ThemeProvider>
     </RecoilRoot>
   );
 }
