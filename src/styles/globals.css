@@ -112,7 +112,7 @@
 }
 
 [data-fade] {
-  @apply translate-y-10 opacity-0 transition duration-[400ms] ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100;
+  @apply translate-y-0 opacity-0 transition duration-[400ms] ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100;
 }
 .fade-in-start [data-fade] {
   @apply translate-y-0 opacity-100;
