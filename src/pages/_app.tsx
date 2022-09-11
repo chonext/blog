@@ -22,7 +22,7 @@ Router.events.on('routeChangeComplete', nProgress.done);
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <RecoilRoot>
-      <ThemeProvider attribute='class' enableSystem={false}>
+      <ThemeProvider attribute='class' enableSystem={true}>
         <Component {...pageProps} />
       </ThemeProvider>
     </RecoilRoot>
