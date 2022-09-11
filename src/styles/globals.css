@@ -111,7 +111,6 @@
   }
 }
 
-/* #region  /**=========== Fade In =========== */
 [data-fade] {
   @apply translate-y-10 opacity-0 transition duration-[400ms] ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100;
 }
@@ -142,11 +141,8 @@
 .fade-in-start [data-fade='8'] {
   transition-delay: 800ms;
 }
-/* #endregion  /**======== Fade In =========== */
 
-/* #region  /**=========== Animate Shadow =========== */
 .animate-shadow {
   @apply after:absolute after:inset-0 after:z-[-1] after:opacity-0 after:transition-opacity hover:after:opacity-100;
   @apply after:shadow-md dark:after:shadow-none;
 }
-/* #endregion  /**======== Animate Shadow =========== */

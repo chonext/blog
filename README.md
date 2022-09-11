@@ -39,6 +39,12 @@ The most beautiful minimalist blog in modern built with Nextjs and tailwindcss.
 
 ![Alt](https://repobeats.axiom.co/api/embed/0d333a7111c72a0c7ed603bfab7298225a46a856.svg 'Repobeats analytics image')
 
+## 🧑‍💻 Contribution
+
+Thank you to all the people who already contributed to my project!
+
+<a href="https://github.com/Chocolate1999/nextjs-tailwind-blog/graphs/contributors"><img src="https://github.com/Chocolate1999/nextjs-tailwind-blog/blob/main/CONTRIBUTORS.svg" /></a>
+
 ## 📄 License
 
 [MIT License](https://github.com/Chocolate1999/nextjs-tailwind-blog/blob/main/LICENSE) © 2022-PRESENT [Chocolate](https://github.com/Chocolate1999)
