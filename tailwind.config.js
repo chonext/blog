@@ -7,14 +7,14 @@ module.exports = {
   darkMode: 'class',
   theme: {
     screens: {
-      mobile: {
-        max: '639px',
+      laptop: {
+        max: '1024px',
       },
       tablet: {
         max: '834px',
       },
-      laptop: {
-        max: '1024px',
+      mb: {
+        max: '639px',
       },
     },
     extend: {

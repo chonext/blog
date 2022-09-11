@@ -8,7 +8,7 @@ const HeaderNav = () => {
   const navVal = useRecoilValue(navAtom);
 
   return (
-    <div className='flex h-full w-auto flex-row items-center justify-center gap-[24px]'>
+    <div className='flex h-full w-auto flex-row items-center justify-center gap-[24px] mb:hidden'>
       {navVal.map((item) => {
         return (
           <div key={item.name}>
