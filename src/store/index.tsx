@@ -15,17 +15,5 @@ export const navAtom = atom({
       name: 'Projects',
       link: '/projects',
     },
-    {
-      name: 'Collection',
-      link: '/collection',
-    },
-    {
-      name: 'Talks',
-      link: '/talks',
-    },
-    {
-      name: 'Links',
-      link: '/links',
-    },
   ],
 });

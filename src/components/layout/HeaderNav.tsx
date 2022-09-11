@@ -8,10 +8,10 @@ const HeaderNav = () => {
   const navVal = useRecoilValue(navAtom);
 
   return (
-    <div className='flex h-full w-auto flex-row items-center justify-center'>
+    <div className='flex h-full w-auto flex-row items-center justify-center gap-[24px]'>
       {navVal.map((item) => {
         return (
-          <div className='pr-[32px]' key={item.name}>
+          <div key={item.name}>
             <UnstyledLink href={item.link}>
               <span className='hover:text-[#0066ff] dark:text-gray-100'>
                 {item.name}

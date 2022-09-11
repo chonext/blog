@@ -3,8 +3,8 @@ import { useMemo } from 'react';
 
 import clsxm from '@/lib/clsxm';
 
-import HeaderNav from '@/components/layout/hader-nav';
-import HeaderButton from '@/components/layout/header-button';
+import HeaderNav from '@/components/layout/HeaderNav';
+import Icon from '@/components/layout/Icon';
 
 export default function Header() {
   const docScroll = useScroll();
@@ -16,16 +16,18 @@ export default function Header() {
   return (
     <header
       className={clsxm(
-        'fixed top-0 z-50 w-full bg-transparent',
+        'sticky top-0 z-50 w-full bg-transparent',
         isDocHover &&
           'solid border-b border-black border-opacity-[0.12] bg-white bg-opacity-[98] backdrop-blur-[40px]',
         'dark:border-b  dark:border-black dark:bg-[#060807]'
       )}
     >
-      <div className='layout flex h-[60px] items-center justify-between leading-[60px]'>
-        <HeaderNav />
-        <HeaderButton />
-      </div>
+      <section className='layout'>
+        <div className='mx-8 flex h-[60px] items-center justify-between leading-[60px]'>
+          <HeaderNav />
+          <Icon />
+        </div>
+      </section>
     </header>
   );
 }
