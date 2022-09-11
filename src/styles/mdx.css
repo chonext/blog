@@ -10,7 +10,7 @@ li {
 }
 
 .shadow {
-  box-shadow: 3px 8px 6px rgba(7, 17, 27, 0.06);
+  box-shadow: 0 3px 8px 6px rgba(7, 17, 27, 0.06);
 }
 
 .prose code:not(:where([data-code-type='code-block'])) {
@@ -69,19 +69,19 @@ li {
 }
 
 .mdx.prose h3 {
-  font-size: 1em;
+  font-size: 1.3em;
 }
 
 .mdx.prose :where(h1, h2, h3, h4) {
-  color: #06f;
+  color: #1f2d3d;
   scroll-margin-top: 100px;
   position: relative;
   display: block;
-  margin-right: 0.5rem;
-  width: -moz-fit-content;
   width: fit-content;
+  margin-right: 0.5rem;
   margin-bottom: 1rem;
   margin-top: 1.5rem;
+  @apply dark:text-[#fff] dark:opacity-90;
 }
 
 .mdx.prose :where(h1, h2, h3, h4) > a {

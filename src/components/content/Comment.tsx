@@ -2,12 +2,10 @@ import { Theme } from '@giscus/react';
 import Giscus from '@giscus/react';
 import { useTheme } from 'next-themes';
 
-import { commentFlag } from '@/constants/env';
-
 export default function Comment() {
   const { theme } = useTheme();
 
-  return commentFlag ? (
+  return (
     <Giscus
       key={theme}
       repo='Chocolate1999/nextjs-tailwind-blog'
@@ -20,5 +18,5 @@ export default function Comment() {
       loading='lazy'
       theme={theme as Theme}
     />
-  ) : null;
+  );
 }
