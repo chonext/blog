@@ -16,25 +16,35 @@ export default function IndexPage({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   const isLoaded = useLoaded();
 
+  const getYear = (a: Date | string | number) => new Date(a).getFullYear();
+
+  const isSameYear = (a: Date | string | number, b: Date | string | number) =>
+    a && b && getYear(a) === getYear(b);
+
   return (
     <Layout>
       <Seo
         templateTitle='Blog'
         description='Thoughts, mental models, and tutorials about front-end development. Rebuild your mental model so front-end development can be predictable.'
       />
-
       <main>
-        <section className={clsx(isLoaded && 'fade-in-start min-h-screen')}>
-          <div className='layout mt-[60px] min-h-screen py-12'>
-            <h1 className='text-5xl dark:text-gray-100' data-fade='0'>
-              Blog
-            </h1>
-            <p className='mt-2 text-gray-600 dark:text-gray-300' data-fade='1'>
-              Thoughts, skill, and tutorials about front-end development.
-            </p>
-            <ul className=' mt-12 grid grid-cols-3 gap-4' data-fade='2'>
+        <section className={clsx(isLoaded && 'fade-in-start')}>
+          <div className='layout'>
+            <ul className='mx-8 mt-12 grid gap-4' data-fade='2'>
               {posts.length > 0 ? (
-                posts.map((post) => <BlogCard key={post.slug} post={post} />)
+                posts.map((post, index) => (
+                  <>
+                    {!isSameYear(
+                      post.publishedAt,
+                      posts[index - 1]?.publishedAt
+                    ) && (
+                      <span className='text-[24px] text-[#aaa]'>
+                        {getYear(post.publishedAt)}
+                      </span>
+                    )}
+                    <BlogCard key={post.slug} post={post} />
+                  </>
+                ))
               ) : (
                 <ContentPlaceholder />
               )}
