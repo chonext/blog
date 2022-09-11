@@ -10,7 +10,7 @@ type ProjectCardProps = {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <ul className='mt-6 grid grid-cols-2		 gap-4'>
+    <ul className='mt-6 grid grid-cols-2 gap-4 mb:grid-cols-none'>
       {project.child.map((projectItem) => (
         <UnstyledLink
           href={projectItem.link}

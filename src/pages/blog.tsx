@@ -30,7 +30,7 @@ export default function IndexPage({
       <main>
         <section className={clsx(isLoaded && 'fade-in-start')}>
           <div className='layout'>
-            <ul className='mx-8 mt-12 grid gap-4' data-fade='1'>
+            <ul className='mx-8 mt-12 grid gap-4 mb:mx-0' data-fade='1'>
               {posts.length > 0 ? (
                 posts.map((post, index) => (
                   <>

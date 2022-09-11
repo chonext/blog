@@ -15,11 +15,11 @@ export default function HomePage() {
       <Seo />
       <main>
         <section className={clsxm(isLoaded && 'fade-in-start')}>
-          <div className='mt-[120px]  text-left'>
+          <div className='mt-[120px]  text-left tablet:mt-[80px] mb:mt-[40px]'>
             <article className=''>
-              <div className='mx-8 flex flex-col items-start'>
+              <div className='mx-8 flex flex-col items-start mb:mx-0'>
                 <p
-                  className='mb-8 text-4xl text-[#555] dark:text-[#bbb]'
+                  className='mb-8 text-4xl text-[#555] dark:text-[#bbb] mb:text-3xl'
                   data-fade='1'
                 >
                   一百个Chocolate
@@ -41,7 +41,7 @@ export default function HomePage() {
                   JS, TS, LeetCode, Vue, React, algorithm lovers.
                 </p>
                 <hr
-                  className='mx-auto my-[2em] h-0 w-[50px] border-t-[1px] border-[#7d7d7d4d]'
+                  className='mx-auto my-[2em] h-0 w-[50px] border-t-[1px] border-[#7d7d7d4d] mb:my-[1em]'
                   data-fade='4'
                 />
                 <p
@@ -77,7 +77,7 @@ export default function HomePage() {
                   sweat with blood, and create the future with positivity!
                 </p>
                 <hr
-                  className='mx-auto my-[2em] h-0 w-[50px] border-t-[1px] border-[#7d7d7d4d]'
+                  className='mx-auto my-[2em] h-0 w-[50px] border-t-[1px] border-[#7d7d7d4d] mb:my-[1em]'
                   data-fade='4'
                 />
                 <p
