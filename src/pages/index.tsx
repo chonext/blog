@@ -111,8 +111,8 @@ export default function HomePage() {
 
                 <div data-fade='5' className='mt-4 flex'>
                   <CustomLink href='/blog'>To Blog</CustomLink>
-                  <CustomLink href='/about' className='ml-6'>
-                    Learn more about me
+                  <CustomLink href='/projects' className='ml-6'>
+                    To Projects
                   </CustomLink>
                 </div>
               </div>

@@ -7,6 +7,12 @@ module.exports = {
   darkMode: 'class',
   theme: {
     screens: {
+      lg: {
+        max: '1920px',
+      },
+      mid: {
+        max: '1320px',
+      },
       laptop: {
         max: '1024px',
       },

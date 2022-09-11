@@ -8,7 +8,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <>
       <Header />
       <div className='layout'>
-        <div className='mx-8'>
+        <div className='mx-8 mb:mx-4'>
           {children}
           <Footer />
         </div>
