@@ -1,8 +1,6 @@
-import clsx from 'clsx';
 import * as React from 'react';
 
 import UnstyledLink from '@/components/links/UnstyledLink';
-import TechIcons, { TechListType } from '@/components/TechIcons';
 
 import { ProjectsType } from '@/types/frontmatters';
 
@@ -10,41 +8,29 @@ type ProjectCardProps = {
   project: ProjectsType;
 } & React.ComponentPropsWithoutRef<'li'>;
 
-export default function ProjectCard({ project, className }: ProjectCardProps) {
+export default function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <ul className='mt-6 grid grid-cols-4 gap-4'>
+    <ul className='mt-6 grid grid-cols-2 gap-4 mb:grid-cols-none'>
       {project.child.map((projectItem) => (
-        <li
+        <UnstyledLink
+          href={projectItem.link}
+          className='group h-full p-4 hover:bg-[#88888808]'
           key={projectItem.title}
-          className={clsx(
-            'project-card md:w-full rounded-md',
-            'border dark:border-gray-600',
-            'scale-100 hover:scale-[1.02] active:scale-[0.97] motion-safe:transform-gpu',
-            'transition duration-100',
-            'motion-reduce:hover:scale-100',
-            'animate-shadow',
-            className
-          )}
         >
-          <UnstyledLink
-            href={projectItem.link}
-            className='flex h-full flex-col items-start rounded-md p-4 focus:outline-none focus-visible:ring focus-visible:ring-primary-300'
-          >
-            <h4>{projectItem.title}</h4>
-            <p className='mb-auto text-sm text-gray-700 dark:text-gray-300'>
-              {projectItem.description}
-            </p>
-            <div className='mt-2'>
-              <TechIcons
-                techs={projectItem.techs.split(',') as Array<TechListType>}
-              />
+          <section className=' flex items-center gap-[24px]'>
+            <div className='text-[38px] opacity-50 group-hover:opacity-70 dark:group-hover:opacity-80'>
+              {projectItem.icon}
             </div>
-
-            <p className='animated-underline mt-2 inline-block font-medium'>
-              See On My Github →
-            </p>
-          </UnstyledLink>
-        </li>
+            <div>
+              <h4 className='text-[#555] group-hover:text-gray-800 dark:text-gray-400 dark:group-hover:text-gray-100'>
+                {projectItem.title}
+              </h4>
+              <p className='mb-auto text-sm text-gray-700 opacity-50 dark:text-gray-300 dark:group-hover:text-gray-50'>
+                {projectItem.description}
+              </p>
+            </div>
+          </section>
+        </UnstyledLink>
       ))}
     </ul>
   );
