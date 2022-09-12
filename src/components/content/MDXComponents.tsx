@@ -1,5 +1,4 @@
 import Image from 'next/image';
-import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 
 import GithubCard from '@/components/content/card/GithubCard';
 import CustomCode, { Pre } from '@/components/content/CustomCode';
@@ -14,7 +13,6 @@ const MDXComponents = {
   pre: Pre,
   code: CustomCode,
   CloudinaryImg,
-  LiteYouTubeEmbed,
   SplitImage,
   Split,
   TechIcons,
