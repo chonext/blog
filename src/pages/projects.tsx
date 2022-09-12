@@ -3,7 +3,7 @@ import { useRecoilValue } from 'recoil';
 
 import useLoaded from '@/hooks/useLoaded';
 
-import ProjectCard from '@/components/content/projects/ProjectItem';
+import ProjectCard from '@/components/content/projects/ProjectCard';
 import Layout from '@/components/layout/Layout';
 import Seo from '@/components/Seo';
 

@@ -1,6 +1,6 @@
-import { useScroll } from 'ahooks';
 import { useMemo } from 'react';
 import { VscHome } from 'react-icons/vsc';
+import { useWindowScroll } from 'react-use';
 
 import clsxm from '@/lib/clsxm';
 
@@ -9,10 +9,10 @@ import Icon from '@/components/layout/Icon';
 import UnstyledLink from '@/components/links/UnstyledLink';
 
 export default function Header() {
-  const docScroll = useScroll();
+  const docScroll = useWindowScroll();
 
   const isDocHover = useMemo(() => {
-    if (docScroll) return !!docScroll.top;
+    if (docScroll) return !!docScroll.y;
   }, [docScroll]);
 
   return (
