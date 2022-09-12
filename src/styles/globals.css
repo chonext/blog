@@ -50,10 +50,6 @@ html.dark {
       U+2215, U+FEFF, U+FFFD;
   }
 
-  .cursor-newtab {
-    cursor: url('/images/new-tab.png') 10 10, pointer;
-  }
-
   /* #region  /**=========== Default Typography =========== */
   h1,
   .h1 {

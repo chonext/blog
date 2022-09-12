@@ -4,8 +4,6 @@ import { ThemeProvider } from 'next-themes';
 import nProgress from 'nprogress';
 import { RecoilRoot } from 'recoil';
 
-import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
-import 'react-tippy/dist/tippy.css';
 import '@/styles/globals.css';
 import '@/styles/mdx.css';
 import '@/styles/dracula.css';
