@@ -108,14 +108,14 @@ export default function SingleBlogPage({
                 </p>
                 {frontmatter.lastUpdated && (
                   <div className='mt-2 flex flex-wrap gap-2 text-sm text-gray-700 dark:text-gray-200'>
-                    <p>
+                    <span>
                       Last updated{' '}
                       {format(
                         new Date(frontmatter.lastUpdated),
                         'MMMM dd, yyyy'
                       )}
                       .
-                    </p>
+                    </span>
                     <UnstyledLink
                       href={COMMIT_HISTORY_LINK}
                       className={clsx(
