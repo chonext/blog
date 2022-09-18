@@ -12,6 +12,19 @@ class MyDocument extends Document {
     return { ...initialProps };
   }
 
+  static getAnalyticsTag = () => {
+    return {
+      __html: `
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?76e43b808e1251f0e3d8f05d3f907831";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();`,
+    };
+  };
+
   render() {
     return (
       <Html lang='en'>
@@ -23,6 +36,7 @@ class MyDocument extends Document {
             type='font/woff2'
             crossOrigin='anonymous'
           />
+          <script dangerouslySetInnerHTML={MyDocument.getAnalyticsTag()} />
         </Head>
         <body>
           <Main />
@@ -34,3 +48,5 @@ class MyDocument extends Document {
 }
 
 export default MyDocument;
+
+<script></script>;
