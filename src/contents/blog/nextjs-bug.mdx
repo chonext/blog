@@ -1,0 +1,34 @@
+---
+title: '记一次 next.js 部署样式混乱问题'
+publishedAt: '2022-09-18'
+description: '滴滴-橙面试总结与复盘'
+tags: '踩坑'
+---
+
+最近，在写 next.js 项目的时候，发现部署之后页面样式全丢了，实在惨不忍睹。
+
+不过我的博客项目 blog.yangchaoyi.vip 是用的 vercel 部署的。
+
+而公司项目走的是腾讯云 COS，部署之后，到 staging 环境直接样式混乱了，后面找到了解决办法，如下：
+
+```javascript
+/** @type {import('next').NextConfig} */
+const isProd = process.env.NODE_ENV === 'production';
+
+module.exports = {
+  // xxxx
+  assetPrefix: isProd ? '.' : '',
+};
+```
+
+### more
+
+这里解释下，为什么对于非生产环境置空吧，如果不判断生产环境，都默认使用 `'.'` 的话，本地开发环境会有如下报错：
+
+> WebSocket connection to url/\_next/webpack-hmr' failed
+
+这个当时困扰我好久，项目不知道怎么做着做着就没有热更新了，开发体验一下变差了好多。
+
+后面不断对比代码，找到了这个地方，算是自己踩坑记录吧。
+
+> 学如逆水行舟，不进则退。
