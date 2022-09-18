@@ -108,14 +108,14 @@ export default function SingleBlogPage({
                 </p>
                 {frontmatter.lastUpdated && (
                   <div className='mt-2 flex flex-wrap gap-2 text-sm text-gray-700 dark:text-gray-200'>
-                    <p>
+                    <span>
                       Last updated{' '}
                       {format(
                         new Date(frontmatter.lastUpdated),
                         'MMMM dd, yyyy'
                       )}
                       .
-                    </p>
+                    </span>
                     <UnstyledLink
                       href={COMMIT_HISTORY_LINK}
                       className={clsx(
@@ -129,7 +129,7 @@ export default function SingleBlogPage({
                     </UnstyledLink>
                   </div>
                 )}
-                <div className='mt-2 flex items-center justify-start gap-2 text-sm font-medium text-gray-600 dark:text-gray-300'>
+                <div className='my-2 flex items-center justify-start gap-2 text-sm font-medium text-gray-600 dark:text-gray-300'>
                   <div className='flex items-center gap-1'>
                     <HiOutlineClock className='inline-block text-base' />
                     {frontmatter.readingTime.text}
