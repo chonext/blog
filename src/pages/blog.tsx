@@ -33,20 +33,20 @@ export default function IndexPage({
             <ul className='mx-8 mt-12 grid gap-4 mb:mx-0' data-fade='1'>
               {posts.length > 0 ? (
                 posts.map((post, index) => (
-                  <>
+                  <div key={post.slug}>
                     {!isSameYear(
                       post.publishedAt,
                       posts[index - 1]?.publishedAt
                     ) && (
-                      <span className='text-[24px] text-[#aaa]'>
+                      <span className='inline-block pb-2 text-[24px] text-[#aaa]'>
                         {getYear(post.publishedAt)}
                       </span>
                     )}
-                    <BlogCard key={post.slug} post={post} />
-                  </>
+                    <BlogCard post={post} key={post.slug} />
+                  </div>
                 ))
               ) : (
-                <ContentPlaceholder />
+                <ContentPlaceholder key='error_boundary' />
               )}
             </ul>
           </div>
