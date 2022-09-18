@@ -129,7 +129,7 @@ export default function SingleBlogPage({
                     </UnstyledLink>
                   </div>
                 )}
-                <div className='mt-2 flex items-center justify-start gap-2 text-sm font-medium text-gray-600 dark:text-gray-300'>
+                <div className='my-2 flex items-center justify-start gap-2 text-sm font-medium text-gray-600 dark:text-gray-300'>
                   <div className='flex items-center gap-1'>
                     <HiOutlineClock className='inline-block text-base' />
                     {frontmatter.readingTime.text}
