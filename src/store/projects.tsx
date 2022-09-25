@@ -1,5 +1,5 @@
 import { BiCarousel } from 'react-icons/bi';
-import { CgNotes, CgWebsite } from 'react-icons/cg';
+import { CgCodeSlash, CgNotes, CgWebsite } from 'react-icons/cg';
 import {
   SiHexo,
   SiLeetcode,
@@ -58,6 +58,13 @@ export const projectsAtom = atom({
             'The latest Vue family bucket + SSR + Koa2 full stack development in 2020',
           link: 'https://github.com/Chocolate1999/Vue-family-bucket-SSR-Koa2-full-stack-development-from-Meituan',
           icon: <CgWebsite />,
+        },
+        {
+          title: 'Vue-MVVM',
+          description:
+            'Analyze the principle of vue implementation and implement a simple version of mvvm',
+          link: 'https://github.com/Chocolate1999/Vue-MVVM',
+          icon: <CgCodeSlash />,
         },
       ],
     },
