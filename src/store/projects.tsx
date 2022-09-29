@@ -1,5 +1,6 @@
 import { BiCarousel } from 'react-icons/bi';
 import { CgCodeSlash, CgNotes, CgWebsite } from 'react-icons/cg';
+import { GrTemplate } from 'react-icons/gr';
 import {
   SiHexo,
   SiLeetcode,
@@ -21,6 +22,12 @@ export const projectsAtom = atom({
             'The most beautiful blog in modern times, using Next.js, TypeScript, Tailwind CSS, Welcome to visit',
           link: 'https://github.com/Chocolate1999/nextjs-tailwind-blog',
           icon: <SiNextdotjs />,
+        },
+        {
+          title: 'nextjs-tailwindcss-starter',
+          description: 'my template for nextjs and tailwindcss',
+          link: 'https://github.com/Chocolate1999/nextjs-tailwindcss-starter',
+          icon: <GrTemplate />,
         },
       ],
     },
