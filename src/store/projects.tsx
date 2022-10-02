@@ -2,6 +2,7 @@ import { BiCarousel } from 'react-icons/bi';
 import { CgCodeSlash, CgNotes, CgWebsite } from 'react-icons/cg';
 import { GrTemplate } from 'react-icons/gr';
 import {
+  SiGreensock,
   SiHexo,
   SiLeetcode,
   SiMarkdown,
@@ -46,6 +47,12 @@ export const projectsAtom = atom({
             'Little lion front-end programming growth learning document with docusaurus',
           link: 'https://github.com/LionCubFrontEnd/docs',
           icon: <SiMarkdown />,
+        },
+        {
+          title: 'data-growth-component',
+          description: 'data-growth-component with react and gsap',
+          link: 'https://github.com/Chocolate1999/data-growth-component',
+          icon: <SiGreensock />,
         },
       ],
     },
