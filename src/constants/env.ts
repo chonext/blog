@@ -1,6 +1,7 @@
 import { getFromLocalStorage } from '@/lib/helper';
 
 export const isProd = process.env.NODE_ENV === 'production';
+export const isLocal = process.env.NODE_ENV === 'development';
 
 /**
  * Show command service on contents
@@ -50,3 +51,7 @@ export const feedbackFlag = isProd;
  * @see _app.tsx
  */
 export const blockDomainMeta = isProd;
+
+export const showLogger = isLocal
+  ? true
+  : process.env.NEXT_PUBLIC_SHOW_LOGGER === 'true' ?? false;

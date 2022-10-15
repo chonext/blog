@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import { showLogger } from '@/constant/env';
+import { showLogger } from '@/constants/env';
 
 /**
  * A logger function that will only logs on development
