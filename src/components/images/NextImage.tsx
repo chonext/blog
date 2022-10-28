@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import Image, { ImageProps } from 'next/image';
+import Image, { ImageProps } from 'next/legacy/image';
 import * as React from 'react';
 
 type NextImageProps = {
