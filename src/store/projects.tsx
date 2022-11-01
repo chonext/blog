@@ -1,5 +1,6 @@
 import { BiCarousel } from 'react-icons/bi';
 import { CgCodeSlash, CgNotes, CgWebsite } from 'react-icons/cg';
+import { GiSelect } from 'react-icons/gi';
 import { GrTemplate } from 'react-icons/gr';
 import {
   SiGreensock,
@@ -53,6 +54,12 @@ export const projectsAtom = atom({
           description: 'data-growth-component with react and gsap',
           link: 'https://github.com/Chocolate1999/data-growth-component',
           icon: <SiGreensock />,
+        },
+        {
+          title: 'react-china-division',
+          description: 'React + Ts 实现中国省市级联选择器',
+          link: 'https://github.com/Chocolate1999/react-china-division',
+          icon: <GiSelect />,
         },
       ],
     },
