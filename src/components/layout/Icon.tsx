@@ -8,7 +8,7 @@ import UnstyledLink from '@/components/links/UnstyledLink';
 
 const Icon = () => {
   return (
-    <div className='flex cursor-pointer gap-[24px] text-[22px]'>
+    <div className='flex gap-[24px] text-[22px]'>
       <UnstyledLink href='/blog' className='hidden mb:inline'>
         <MdOutlineArticle />
       </UnstyledLink>
