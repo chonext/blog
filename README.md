@@ -22,7 +22,7 @@ The most beautiful minimalist blog in modern built with Nextjs and tailwindcss.
 - 🦾 TypeScript, of course
 - 🗂 File based routing
 - 🌍 I18n ready
-- ⚙️ Eslint + Prittier
+- ⚙️ Eslint + Prettier
 - 🌓 Dark mode support
 - 🧑‍💻 Continuous renovation
 
