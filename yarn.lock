@@ -6781,10 +6781,10 @@ prelude-ls@~1.1.2:
   resolved "https://registry.npmjs.org/prelude-ls/-/prelude-ls-1.1.2.tgz"
   integrity sha1-IZMqVJ9eUv/ZqCf1cOBL5iqX2lQ=
 
-prettier-plugin-tailwindcss@^0.1.12:
-  version "0.1.12"
-  resolved "https://registry.npmjs.org/prettier-plugin-tailwindcss/-/prettier-plugin-tailwindcss-0.1.12.tgz"
-  integrity sha512-pEZ6tppwknCeq3ObR9g8t61AhWtVRRR3I0EQNeiRrrJ3D42FJGeUDxiFc/LJRYEeAx5JOxagsF0MICwuWOJa+w==
+prettier-plugin-tailwindcss@^0.2.0:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/prettier-plugin-tailwindcss/-/prettier-plugin-tailwindcss-0.2.3.tgz#b68a1de10056fc84055426af132c2697bea0955c"
+  integrity sha512-s2N5Dh7Ao5KTV1mao5ZBnn8EKtUcDPJEkGViZIjI0Ij9TTI5zgTz4IHOxW33jOdjHKa8CSjM88scelUiC5TNRQ==
 
 prettier@^2.7.1:
   version "2.7.1"
