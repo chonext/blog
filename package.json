@@ -23,7 +23,7 @@
     "cloudinary-build-url": "^0.2.4",
     "clsx": "^1.2.1",
     "date-fns": "^2.29.1",
-    "esbuild": "^0.14.51",
+    "esbuild": "^0.17.0",
     "intercept-stdout": "^0.1.2",
     "lodash": "^4.17.21",
     "next": "^13.0.0",
