@@ -2,5 +2,5 @@
 . "$(dirname "$0")/_/husky.sh"
 
 npx lint-staged
-yarn lint:fix
-yarn typecheck
+nr lint:fix
+nr typecheck
