@@ -17,16 +17,23 @@ jobs:
       - name: ⬇️ Checkout repo
         uses: actions/checkout@v3
 
+      - name: ⚡ Install pnpm
+        uses: pnpm/action-setup@v2
+
       - name: ⎔ Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18.x
+          cache: pnpm
+
+      - name: ⎔ Setup
+        run: npm i -g @antfu/ni
 
       - name: 📥 Download deps
-        uses: bahmutov/npm-install@v1
+        run: nci
 
       - name: 🔬 Lint
-        run: yarn lint:strict
+        run: nr lint:strict
 
   typecheck:
     name: ʦ TypeScript
@@ -38,16 +45,23 @@ jobs:
       - name: ⬇️ Checkout repo
         uses: actions/checkout@v3
 
+      - name: ⚡ Install pnpm
+        uses: pnpm/action-setup@v2
+
       - name: ⎔ Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18.x
+          cache: pnpm
+
+      - name: ⎔ Setup
+        run: npm i -g @antfu/ni
 
       - name: 📥 Download deps
-        uses: bahmutov/npm-install@v1
+        run: nci
 
       - name: 🔎 Type check
-        run: yarn typecheck
+        run: nr typecheck
 
   prettier:
     name: 💅 Prettier
@@ -59,16 +73,23 @@ jobs:
       - name: ⬇️ Checkout repo
         uses: actions/checkout@v3
 
+      - name: ⚡ Install pnpm
+        uses: pnpm/action-setup@v2
+
       - name: ⎔ Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18.x
+          cache: pnpm
+
+      - name: ⎔ Setup
+        run: npm i -g @antfu/ni
 
       - name: 📥 Download deps
-        uses: bahmutov/npm-install@v1
+        run: nci
 
       - name: 🔎 Type check
-        run: yarn format:check
+        run: nr format:check
 
   test:
     name: 🃏 Test
@@ -80,13 +101,20 @@ jobs:
       - name: ⬇️ Checkout repo
         uses: actions/checkout@v3
 
+      - name: ⚡ Install pnpm
+        uses: pnpm/action-setup@v2
+
       - name: ⎔ Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18.x
+          cache: pnpm
+
+      - name: ⎔ Setup
+        run: npm i -g @antfu/ni
 
       - name: 📥 Download deps
-        uses: bahmutov/npm-install@v1
+        run: nci
 
       - name: 🃏 Run jest
-        run: yarn test
+        run: nr test
