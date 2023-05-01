@@ -19,5 +19,9 @@ export const navAtom = atom({
       name: 'Projects',
       link: '/projects',
     },
+    {
+      name: 'Links',
+      link: '/links',
+    },
   ],
 });
