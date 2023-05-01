@@ -15,7 +15,7 @@ type BlogCardProps = {
   checkTagged?: (tag: string) => boolean;
 } & React.ComponentPropsWithoutRef<'li'>;
 
-export default function BlogCard({
+export default function GridCard({
   post,
   className,
   checkTagged,

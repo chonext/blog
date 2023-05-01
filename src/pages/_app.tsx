@@ -20,7 +20,7 @@ Router.events.on('routeChangeComplete', nProgress.done);
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <RecoilRoot>
-      <ThemeProvider attribute='class' enableSystem={true}>
+      <ThemeProvider attribute='class' enableSystem={false}>
         <SWRConfig
           value={{
             fetcher: (url) => axios.get(url).then((res) => res.data),
