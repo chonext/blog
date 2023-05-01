@@ -20,7 +20,7 @@ export async function getFiles(type: ContentType) {
 }
 
 export async function getFileBySlug(type: ContentType, slug: string) {
-  const mdxSource = slug
+  const source = slug
     ? readFileSync(
         join(process.cwd(), 'src', 'contents', type, `${slug}.mdx`),
         'utf8'
@@ -31,8 +31,8 @@ export async function getFileBySlug(type: ContentType, slug: string) {
       );
 
   const { code, frontmatter } = await bundleMDX({
-    source: mdxSource,
-    mdxOptions(options, _) {
+    source,
+    mdxOptions(options) {
       options.remarkPlugins = [...(options?.remarkPlugins ?? []), remarkGfm];
       options.rehypePlugins = [
         ...(options?.rehypePlugins ?? []),
@@ -47,6 +47,7 @@ export async function getFileBySlug(type: ContentType, slug: string) {
           },
         ],
       ];
+
       return options;
     },
   });
@@ -54,8 +55,8 @@ export async function getFileBySlug(type: ContentType, slug: string) {
   return {
     code,
     frontmatter: {
-      wordCount: mdxSource.split(/\s+/gu).length,
-      readingTime: readingTime(mdxSource),
+      wordCount: source.split(/\s+/gu).length,
+      readingTime: readingTime(source),
       slug: slug || null,
       ...frontmatter,
     },

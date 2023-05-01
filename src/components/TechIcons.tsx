@@ -15,6 +15,7 @@ import {
   SiReact,
   SiRedux,
   SiSass,
+  SiSwift,
   SiTailwindcss,
   SiTypescript,
 } from 'react-icons/si';
@@ -36,7 +37,7 @@ export default function TechIcons({ className, techs }: TechIconsProps) {
         const current = techList[tech];
 
         return (
-          <Tooltip key={current.name} content={<p>{current.name}</p>}>
+          <Tooltip key={current.name} tipChildren={<p>{current.name}</p>}>
             <li className='text-xl text-gray-700 dark:text-gray-200'>
               <current.icon />
             </li>
@@ -111,5 +112,9 @@ const techList = {
   notion: {
     icon: SiNotion,
     name: 'Notion API',
+  },
+  swift: {
+    icon: SiSwift,
+    name: 'Swift',
   },
 };

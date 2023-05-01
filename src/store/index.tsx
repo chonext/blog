@@ -12,6 +12,10 @@ export const navAtom = atom({
       link: '/blog',
     },
     {
+      name: 'Archives',
+      link: '/archives',
+    },
+    {
       name: 'Projects',
       link: '/projects',
     },

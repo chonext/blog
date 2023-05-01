@@ -26,7 +26,7 @@ export default function Header() {
     >
       <section className='layout'>
         <div className='mx-8 flex h-[60px] items-center justify-between leading-[60px]'>
-          <UnstyledLink href='/' className='hidden text-[22px] mb:inline'>
+          <UnstyledLink href='/' className='md:hidden text-[22px] inline'>
             <VscHome />
           </UnstyledLink>
           <HeaderNav />

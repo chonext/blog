@@ -4,13 +4,14 @@ export type BlogFrontmatter = {
   wordCount: number;
   readingTime: ReadTimeResults;
   slug: string;
-  englishOnly?: boolean;
+  zhAndEn?: boolean;
   title: string;
   description: string;
   banner: string;
   publishedAt: string;
   lastUpdated?: string;
   tags: string;
+  repost?: string;
 };
 
 export type ContentType = 'blog' | 'library' | 'projects';
