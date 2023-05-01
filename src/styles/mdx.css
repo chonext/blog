@@ -1,5 +1,5 @@
 .prose {
-  max-width: unset;
+  @apply lg:max-w-[50rem] xl:max-w-[65rem];
 }
 
 .prose p,

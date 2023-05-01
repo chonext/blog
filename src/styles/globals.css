@@ -78,7 +78,7 @@ html.dark {
   /* #endregion  /**======== Default Typography =========== */
 
   .layout {
-    max-width: 1400px;
+    max-width: 86.5rem;
     @apply mx-auto w-full;
   }
 

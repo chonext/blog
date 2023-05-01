@@ -7,21 +7,26 @@ import { HiOutlineClock, HiOutlineEye } from 'react-icons/hi';
 import { MdHistory } from 'react-icons/md';
 
 import { trackEvent } from '@/lib/analytics';
-import { cleanBlogPrefix } from '@/lib/helper';
+import { checkBlogPrefix, cleanBlogPrefix } from '@/lib/helper';
 import { getFileBySlug, getFiles, getRecommendations } from '@/lib/mdx';
 import useContentMeta from '@/hooks/useContentMeta';
 import useInjectContentMeta from '@/hooks/useInjectContentMeta';
 import useScrollSpy from '@/hooks/useScrollspy';
 
-import BlogCard from '@/components/content/blog/BlogCard';
+import Accent from '@/components/Accent';
+import GridCard from '@/components/content/blog/GridCard';
+import SubscribeCard from '@/components/content/blog/SubscribeCard';
 import Comment from '@/components/content/Comment';
+import LikeButton from '@/components/content/LikeButton';
 import MDXComponents from '@/components/content/MDXComponents';
 import ReloadDevtool from '@/components/content/ReloadDevtool';
 import TableOfContents, {
   HeadingScrollSpy,
 } from '@/components/content/TableOfContents';
+import CloudinaryImg from '@/components/images/CloudinaryImg';
 import Layout from '@/components/layout/Layout';
 import CustomLink from '@/components/links/CustomLink';
+import ShareTweetButton from '@/components/links/ShareTweetButton';
 import UnstyledLink from '@/components/links/UnstyledLink';
 import Seo from '@/components/Seo';
 import Tooltip from '@/components/Tooltip';
@@ -44,22 +49,16 @@ export default function SingleBlogPage({
     recommendations
   );
 
-  //#region  //*=========== Link Constants ===========
   const COMMIT_HISTORY_LINK = `https://github.com/Chocolate1999/nextjs-tailwind-blog/commits/main/src/contents/blog/${frontmatter.slug}.mdx`;
   const GITHUB_EDIT_LINK = `https://github.com/Chocolate1999/nextjs-tailwind-blog/blob/main/src/contents/blog/${frontmatter.slug}.mdx`;
   const OG_BANNER_LINK = `https://res.cloudinary.com/chocolate1999/image/upload/f_auto,c_fill,ar_4:5,w_1200/chocolate1999/banner/${frontmatter.banner}`;
-  //#endregion  //*======== Link Constants ===========
 
-  //#region  //*=========== Blog Language ===========
   const cleanSlug = cleanBlogPrefix(frontmatter.slug);
-  //#endregion  //*======== Blog Language ===========
+  const isEnglish = checkBlogPrefix(frontmatter.slug);
 
-  //#region  //*=========== Content Meta ===========
   const contentSlug = `b_${cleanSlug}`;
   const meta = useContentMeta(contentSlug, { runIncrement: true });
-  //#endregion  //*======== Content Meta ===========
 
-  //#region  //*=========== Scrollspy ===========
   const activeSection = useScrollSpy();
 
   const [toc, setToc] = React.useState<HeadingScrollSpy>();
@@ -68,6 +67,7 @@ export default function SingleBlogPage({
 
   React.useEffect(() => {
     const headings = document.querySelectorAll('.mdx h1, .mdx h2, .mdx h3');
+
     const headingArr: HeadingScrollSpy = [];
     headings.forEach((heading) => {
       const id = heading.id;
@@ -79,7 +79,6 @@ export default function SingleBlogPage({
 
     setToc(headingArr);
   }, [frontmatter.slug]);
-  //#endregion  //*======== Scrollspy ===========
 
   return (
     <Layout>
@@ -91,73 +90,96 @@ export default function SingleBlogPage({
         date={new Date(
           frontmatter.lastUpdated ?? frontmatter.publishedAt
         ).toISOString()}
+        canonical={frontmatter.repost}
       />
 
       <main>
         <ReloadDevtool />
         <section className=''>
-          <div className='layout  pt-8'>
-            <section className='grid grid-cols-[auto,334px] gap-8  mid:grid-cols-none'>
-              <article className='mdx prose dark:prose-invert mx-auto mt-4 w-full rounded-[8px] border border-white bg-white px-8 py-6 shadow transition-colors dark:border-gray-600 dark:bg-[#121212] mb:px-4 mb:pt-0'>
-                <span className='mt-0 block  border-b-[1px] border-solid border-b-[#eee] pb-[0.2em] text-3xl font-normal leading-normal text-[#1f2d3d] dark:border-b-gray-600	dark:text-[#fff]	dark:opacity-90'>
-                  {frontmatter.title}
-                </span>
-                <p className='mt-2 text-sm text-gray-600 dark:text-gray-300'>
-                  Written on{' '}
-                  {format(new Date(frontmatter.publishedAt), 'MMMM dd, yyyy')}
-                </p>
-                {frontmatter.lastUpdated && (
-                  <div className='mt-2 flex flex-wrap gap-2 text-sm text-gray-700 dark:text-gray-200'>
-                    <span>
-                      Last updated{' '}
-                      {format(
-                        new Date(frontmatter.lastUpdated),
-                        'MMMM dd, yyyy'
-                      )}
-                      .
-                    </span>
-                    <UnstyledLink
-                      href={COMMIT_HISTORY_LINK}
-                      className={clsx(
-                        'inline-flex items-center gap-1 rounded-sm font-medium',
-                        'text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-primary-300',
-                        'focus:outline-none focus-visible:ring focus-visible:ring-primary-300'
-                      )}
-                    >
-                      <MdHistory className='text-lg' />
-                      <span>See changes</span>
-                    </UnstyledLink>
-                  </div>
-                )}
-                <div className='my-2 flex items-center justify-start gap-2 text-sm font-medium text-gray-600 dark:text-gray-300'>
-                  <div className='flex items-center gap-1'>
-                    <HiOutlineClock className='inline-block text-base' />
-                    {frontmatter.readingTime.text}
-                  </div>
-                  {meta?.devtoViews ? (
-                    <Tooltip
-                      content={
-                        <>
-                          {meta.devtoViews.toLocaleString()} views on{' '}
-                          <CustomLink href='https://dev.to/theodorusclarence'>
-                            dev.to
-                          </CustomLink>
-                        </>
-                      }
-                      position='bottom'
-                    >
-                      <div className='flex items-center gap-1'>
-                        <HiOutlineEye className='inline-block text-base' />
-                        {meta?.views?.toLocaleString() ?? '-'} views
-                      </div>
-                    </Tooltip>
-                  ) : (
+          <div className='layout'>
+            <div className='pb-4 dark:border-gray-600'>
+              <CloudinaryImg
+                publicId={`banner/${frontmatter.banner}`}
+                alt={`Photo from unsplash: ${frontmatter.banner}`}
+                width={1400}
+                height={(1400 * 2) / 5}
+                aspect={{ height: 2, width: 5 }}
+              />
+
+              <h1 className='mt-4'>{frontmatter.title}</h1>
+
+              <p className='mt-2 text-sm text-gray-600 dark:text-gray-300'>
+                Written on{' '}
+                {format(new Date(frontmatter.publishedAt), 'MMMM dd, yyyy')} by
+                Choi Yang.
+              </p>
+              {frontmatter.lastUpdated && (
+                <div className='mt-2 flex flex-wrap gap-2 text-sm text-gray-700 dark:text-gray-200'>
+                  <p>
+                    Last updated{' '}
+                    {format(new Date(frontmatter.lastUpdated), 'MMMM dd, yyyy')}
+                    .
+                  </p>
+                  <UnstyledLink
+                    href={COMMIT_HISTORY_LINK}
+                    className={clsx(
+                      'inline-flex items-center gap-1 rounded-sm font-medium',
+                      'text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-primary-300',
+                      'focus:outline-none focus-visible:ring focus-visible:ring-primary-300'
+                    )}
+                  >
+                    <MdHistory className='text-lg' />
+                    <span>See changes</span>
+                  </UnstyledLink>
+                </div>
+              )}
+              <div className='mt-6 flex items-center justify-start gap-2 text-sm font-medium text-gray-600 dark:text-gray-300'>
+                <div className='flex items-center gap-1'>
+                  <HiOutlineClock className='inline-block text-base' />
+                  <Accent>{frontmatter.readingTime.text}</Accent>
+                </div>
+                {meta?.devtoViews ? (
+                  <Tooltip
+                    tipChildren={
+                      <>
+                        {meta.devtoViews.toLocaleString()} views on{' '}
+                        <CustomLink href='https://dev.to/theodorusclarence'>
+                          dev.to
+                        </CustomLink>
+                      </>
+                    }
+                    position='bottom'
+                  >
                     <div className='flex items-center gap-1'>
                       <HiOutlineEye className='inline-block text-base' />
-                      {meta?.views?.toLocaleString() ?? '-'} views
+                      <Accent>
+                        {meta?.views?.toLocaleString() ?? '–'} views
+                      </Accent>
                     </div>
-                  )}
-                </div>
+                  </Tooltip>
+                ) : (
+                  <div className='flex items-center gap-1'>
+                    <HiOutlineEye className='inline-block text-base' />
+                    <Accent>
+                      {meta?.views?.toLocaleString() ?? '–'} views
+                    </Accent>
+                  </div>
+                )}
+              </div>
+              {frontmatter?.zhAndEn && (
+                <CustomLink
+                  href={`/blog/${isEnglish ? 'en-' : ''}${cleanSlug}`}
+                  className='mt-4'
+                >
+                  Read in {isEnglish ? 'Chinese' : 'English'}
+                </CustomLink>
+              )}
+            </div>
+
+            <hr className='dark:border-gray-600' />
+
+            <section className='lg:grid lg:grid-cols-[auto,250px] lg:gap-8'>
+              <article className='mdx prose mx-auto mt-4 w-full transition-colors dark:prose-invert'>
                 <Component
                   components={
                     {
@@ -168,34 +190,42 @@ export default function SingleBlogPage({
                 />
               </article>
 
-              <aside className='py-4 mid:hidden'>
-                <div className='sticky top-[84px] rounded-[8px] bg-white px-4 py-5 shadow dark:bg-[#121212]'>
+              <aside className='py-4'>
+                <div className='sticky top-36'>
                   <TableOfContents
                     toc={toc}
                     minLevel={minLevel}
                     activeSection={decodeURI(activeSection as string)}
                   />
-                  {/* <div className='flex items-center justify-center py-8'>
+                  <div className='flex items-center justify-center py-8'>
                     <LikeButton slug={contentSlug} />
-                  </div> */}
+                  </div>
                 </div>
               </aside>
             </section>
 
-            <figure className='mt-12 rounded-[8px] bg-white p-6 shadow dark:bg-[#121212]'>
+            <ShareTweetButton
+              className='mt-12'
+              url={`https://blog.yangchaoyi.vip/blog/${frontmatter.slug}`}
+              title={frontmatter.title}
+            />
+
+            <figure className='mt-12'>
               <Comment key={frontmatter.slug} />
             </figure>
 
             {populatedRecommendations.length > 0 && (
-              <div className='mt-20 dark:text-gray-200'>
-                <h2>Other posts that you might like</h2>
-                <ul className='mt-4 grid grid-cols-1 gap-4'>
+              <div className='mt-20'>
+                <h2>
+                  <Accent>Other posts that you might like</Accent>
+                </h2>
+                <ul className='mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-3'>
                   {populatedRecommendations.map((post, i) => (
-                    <BlogCard
+                    <GridCard
                       onClick={() => {
-                        trackEvent(post.slug, 'recommend');
+                        trackEvent(post.slug, { type: 'recommend' });
                       }}
-                      className={clsx({ block: i === 2 })}
+                      className={clsx({ 'hidden xl:block': i === 2 })}
                       key={post.slug}
                       post={post}
                     />
@@ -204,7 +234,9 @@ export default function SingleBlogPage({
               </div>
             )}
 
-            <div className='mt-8 flex flex-row-reverse items-start justify-between gap-4'>
+            <SubscribeCard className='mt-12' title='Enjoying this post?' />
+
+            <div className='mt-8 flex flex-col items-start gap-4 md:flex-row-reverse md:justify-between'>
               <CustomLink href={GITHUB_EDIT_LINK}>
                 Edit this on GitHub
               </CustomLink>

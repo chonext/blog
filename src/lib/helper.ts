@@ -3,6 +3,8 @@ type OpenGraphType = {
   description: string;
   templateTitle?: string;
   logo?: string;
+  banner?: string;
+  isBlog?: boolean;
 };
 
 export function openGraph({
@@ -10,6 +12,8 @@ export function openGraph({
   templateTitle,
   description,
   logo = 'https://help-assets.codehub.cn/enterprise/guanwang/favicon.ico',
+  banner,
+  isBlog = false,
 }: OpenGraphType): string {
   const ogLogo = encodeURIComponent(logo);
   const ogSiteName = encodeURIComponent(siteName.trim());
@@ -18,19 +22,36 @@ export function openGraph({
     : undefined;
   const ogDesc = encodeURIComponent(description.trim());
 
-  return `https://og.coding.net/api/general?siteName=${ogSiteName}&description=${ogDesc}&logo=${ogLogo}${
+  if (isBlog) {
+    const ogBanner = banner ? encodeURIComponent(banner.trim()) : undefined;
+
+    return `https://og-chodocs.vercel.app/api/blog?templateTitle=${ogTemplateTitle}&banner=${ogBanner}`;
+  }
+
+  return `https://og-chodocs.vercel.app/api/general?siteName=${ogSiteName}&description=${ogDesc}&logo=${ogLogo}${
     ogTemplateTitle ? `&templateTitle=${ogTemplateTitle}` : ''
   }`;
 }
 
 /**
- * Remove `id-` prefix
+ * Remove `en-` prefix
  */
 export const cleanBlogPrefix = (slug: string) => {
-  if (slug.slice(0, 3) === 'id-') {
+  if (slug.slice(0, 3) === 'en-') {
     return slug.slice(3);
   } else {
     return slug;
+  }
+};
+
+/**
+ * Check `en-` prefix
+ */
+export const checkBlogPrefix = (slug: string) => {
+  if (slug.slice(0, 3) === 'en-') {
+    return true;
+  } else {
+    return false;
   }
 };
 

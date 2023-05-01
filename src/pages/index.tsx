@@ -15,17 +15,20 @@ export default function HomePage() {
       <Seo />
       <main>
         <section className={clsxm(isLoaded && 'fade-in-start')}>
-          <div className='mt-[120px]  text-left tablet:mt-[80px] mb:mt-[40px]'>
+          <div className='md:mt-[120px]  text-left tablet:mt-[80px] mt-[40px]'>
             <article className=''>
               <div className='mx-8 flex flex-col items-start mb:mx-0'>
                 <p
-                  className='mb-8 text-4xl text-[#555] dark:text-[#bbb] mb:text-3xl'
+                  className='mb-8 md:text-4xl text-[#555] dark:text-[#bbb] text-3xl'
                   data-fade='1'
                 >
                   一百个Chocolate
                 </p>
                 <p
-                  className='text-lg text-[#555] dark:text-[#bbb]'
+                  className={clsxm(
+                    'text-lg text-[#555] dark:text-[#bbb]',
+                    'lg:text-xl'
+                  )}
                   data-fade='1'
                 >
                   Hey, I am Chocolate, the 21st front-end development, currently
@@ -34,20 +37,20 @@ export default function HomePage() {
                 <p
                   className={clsxm(
                     'mt-6  text-[#555] dark:text-[#bbb]',
-                    '2xl:text-xl text-left text-lg'
+                    'lg:text-xl text-left text-lg'
                   )}
                   data-fade='3'
                 >
                   JS, TS, LeetCode, Vue, React, algorithm lovers.
                 </p>
                 <hr
-                  className='mx-auto my-[2em] h-0 w-[50px] border-t-[1px] border-[#7d7d7d4d] mb:my-[1em]'
+                  className='mx-auto md:my-[2em] h-0 w-[50px] border-t-[1px] border-[#7d7d7d4d] my-[1em]'
                   data-fade='4'
                 />
                 <p
                   className={clsxm(
                     'mt-6  text-[#555] dark:text-[#bbb]',
-                    '2xl:text-xl text-left text-lg'
+                    'lg:text-xl text-left text-lg'
                   )}
                   data-fade='3'
                 >
@@ -58,7 +61,7 @@ export default function HomePage() {
                 <p
                   className={clsxm(
                     'mt-6  text-[#555] dark:text-[#bbb]',
-                    '2xl:text-xl text-left text-lg'
+                    'lg:text-xl text-left text-lg'
                   )}
                   data-fade='3'
                 >
@@ -69,7 +72,7 @@ export default function HomePage() {
                 <p
                   className={clsxm(
                     'mt-6  text-[#555] dark:text-[#bbb]',
-                    '2xl:text-xl text-left text-lg'
+                    'lg:text-xl text-left text-lg'
                   )}
                   data-fade='3'
                 >
@@ -77,13 +80,13 @@ export default function HomePage() {
                   sweat with blood, and create the future with positivity!
                 </p>
                 <hr
-                  className='mx-auto my-[2em] h-0 w-[50px] border-t-[1px] border-[#7d7d7d4d] mb:my-[1em]'
+                  className='mx-auto md:my-[2em] h-0 w-[50px] border-t-[1px] border-[#7d7d7d4d] my-[1em]'
                   data-fade='4'
                 />
                 <p
                   className={clsxm(
                     ' mt-2 text-[#555] dark:text-[#bbb]',
-                    '2xl:text-xl text-left text-lg'
+                    'lg:text-xl text-left text-lg'
                   )}
                   data-fade='4'
                 >
@@ -101,7 +104,7 @@ export default function HomePage() {
                 <p
                   className={clsxm(
                     ' mt-2 text-[#555] dark:text-[#bbb]',
-                    '2xl:text-xl text-left text-lg'
+                    'lg:text-xl text-left text-lg'
                   )}
                   data-fade='4'
                 >

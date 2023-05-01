@@ -36,6 +36,13 @@ class MyDocument extends Document {
             type='font/woff2'
             crossOrigin='anonymous'
           />
+          <script
+            async
+            defer
+            data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID || ''}
+            src='https://umami.thcl.dev/umami.js'
+            data-domains='yangchaoyi.vip'
+          />
           <script dangerouslySetInnerHTML={MyDocument.getAnalyticsTag()} />
         </Head>
         <body>
