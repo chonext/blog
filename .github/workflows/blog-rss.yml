@@ -1,4 +1,8 @@
 name: blog rss
+
+permissions:
+  contents: write
+
 on:
   push:
     branches:
@@ -14,7 +18,7 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Pull in chodocs posts
+      - name: Pull in blog posts
         uses: gautamkrishnar/blog-post-workflow@v1
         with:
           max_post_count: 6
