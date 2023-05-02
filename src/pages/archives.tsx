@@ -6,7 +6,7 @@ import { getAllFilesFrontmatter } from '@/lib/mdx';
 import { sortByDate } from '@/lib/mdx-client';
 import useLoaded from '@/hooks/useLoaded';
 
-import BlogCard from '@/components/content/blog/BlogCard';
+import ArchiveCard from '@/components/content/blog/ArchiveCard';
 import ContentPlaceholder from '@/components/content/ContentPlaceholder';
 import Layout from '@/components/layout/Layout';
 import Seo from '@/components/Seo';
@@ -30,7 +30,7 @@ export default function IndexPage({
       <main>
         <section className={clsx(isLoaded && 'fade-in-start')}>
           <div className='layout'>
-            <ul className='mx-8 mt-12 grid gap-4 mb:mx-0' data-fade='1'>
+            <ul className='mt-12 grid gap-4' data-fade='1'>
               {posts.length > 0 ? (
                 posts.map((post, index) => (
                   <div key={post.slug}>
@@ -42,7 +42,7 @@ export default function IndexPage({
                         {getYear(post.publishedAt)}
                       </span>
                     )}
-                    <BlogCard post={post} key={post.slug} />
+                    <ArchiveCard post={post} key={post.slug} />
                   </div>
                 ))
               ) : (

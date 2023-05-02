@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import axios from 'axios';
 import { AppProps } from 'next/app';
 import Router from 'next/router';
@@ -27,6 +28,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           }}
         >
           <Component {...pageProps} />
+          <Analytics />
         </SWRConfig>
       </ThemeProvider>
     </RecoilRoot>

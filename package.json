@@ -21,6 +21,7 @@
   "dependencies": {
     "@giscus/react": "^2.2.0",
     "@headlessui/react": "^1.7.14",
+    "@vercel/analytics": "^1.0.0",
     "axios": "^1.0.0",
     "cloudinary-build-url": "^0.2.4",
     "clsx": "^1.2.1",
@@ -72,7 +73,7 @@
     "jest-environment-jsdom": "^29.5.0",
     "lint-staged": "^13.1.2",
     "mdx-bundler": "^9.0.1",
-    "next-sitemap": "^4.0.0",
+    "next-sitemap": "^4.0.3",
     "nprogress": "^0.2.0",
     "postcss": "^8.4.14",
     "prettier": "^2.7.1",

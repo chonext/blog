@@ -22,10 +22,7 @@ export default function ProjectsPage() {
       <main>
         <section className={clsx(isLoaded && 'fade-in-start')}>
           <div className='layout'>
-            <div
-              className='mx-8 mt-12 grid max-w-[820px] gap-4 mb:mx-0'
-              data-fade='1'
-            >
+            <div className='mt-12 grid max-w-[820px] gap-4' data-fade='1'>
               <p className='text-[32px]'>Projects</p>
               <p className='mb-[32px] italic opacity-50'>
                 Showcase of my projects on front-end development that I'm proud

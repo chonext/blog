@@ -10,8 +10,7 @@ const defaultMeta = {
     'Chocolate 个人博客，JS，TS，LeetCode，Vue，React，算法爱好者。座右铭：学如逆水行舟，不进则退！',
   keywords:
     'Chocolate 个人博客，JS，TS，LeetCode，Vue，React，算法爱好者。座右铭：学如逆水行舟，不进则退！',
-  /** Without additional '/' on the end */
-  url: 'https://blog.yangchaoyi.vip',
+  url: 'https://yangchaoyi.vip',
   image: '',
   type: 'website',
   robots: 'follow, index',

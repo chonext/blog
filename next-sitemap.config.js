@@ -4,8 +4,9 @@
  */
 module.exports = {
   /** Without additional '/' on the end */
-  siteUrl: 'https://blog.yangchaoyi.vip',
+  siteUrl: 'https://yangchaoyi.vip',
   generateRobotsTxt: true,
+  generateIndexSitemap: false,
   robotsTxtOptions: {
     policies: [{ userAgent: '*', allow: '/' }],
   },

@@ -14,7 +14,7 @@ import useInjectContentMeta from '@/hooks/useInjectContentMeta';
 import useScrollSpy from '@/hooks/useScrollspy';
 
 import Accent from '@/components/Accent';
-import GridCard from '@/components/content/blog/GridCard';
+import GridCard from '@/components/content/blog/BlogCard';
 import SubscribeCard from '@/components/content/blog/SubscribeCard';
 import Comment from '@/components/content/Comment';
 import LikeButton from '@/components/content/LikeButton';
@@ -206,7 +206,7 @@ export default function SingleBlogPage({
 
             <ShareTweetButton
               className='mt-12'
-              url={`https://blog.yangchaoyi.vip/blog/${frontmatter.slug}`}
+              url={`https://yangchaoyi.vip/blog/${frontmatter.slug}`}
               title={frontmatter.title}
             />
 

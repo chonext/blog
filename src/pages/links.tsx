@@ -3,6 +3,7 @@ import { useRecoilValue } from 'recoil';
 
 import useLoaded from '@/hooks/useLoaded';
 
+import Comment from '@/components/content/Comment';
 import ContentPlaceholder from '@/components/content/ContentPlaceholder';
 import LinkCard from '@/components/content/links/LinkCard';
 import Layout from '@/components/layout/Layout';
@@ -51,6 +52,9 @@ export default function ProjectsPage() {
               )}
             </ul>
           </div>
+          <figure className='mt-12'>
+            <Comment />
+          </figure>
         </section>
       </main>
     </Layout>
