@@ -33,14 +33,14 @@ export default function ProjectsPage() {
               </p>
             </div>
             <hr />
-            <p className='opacity-50 py-8'>
+            <p className='opacity-50 py-8' data-fade='2'>
               过去（大概 20-21
               年）的时候，添加了许多友链，最近迁移到此站点。目前旧的 hexo
               博客已不再使用，在做迁移的时候快速看了一下过去的友链，原来的一些伙伴们许多网站都打不开了，或者也很久没有更新了，因此迁移的时候没有添加各位了，如若您还留有我的友链，也欢迎来本页提交，我会重新添加进来。
             </p>
             <ul
               className='mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-4'
-              data-fade='2'
+              data-fade='3'
             >
               {LINKS_ATOM.length > 0 ? (
                 LINKS_ATOM.map((info: ILinkProps, index) => (
@@ -59,7 +59,7 @@ export default function ProjectsPage() {
               )}
             </ul>
           </div>
-          <div className='text-gray-600 dark:text-gray-300'>
+          <div className='text-gray-600 dark:text-gray-300' data-fade='4'>
             <p className='pb-2'>以下是我的博客信息，欢迎添加友链：</p>
             <p>博客名称：超逸の博客</p>
             <p>网站地址：https://yangchaoyi.vip/</p>
