@@ -76,8 +76,8 @@ dependencies:
 
 devDependencies:
   '@antfu/ni':
-    specifier: ^0.20.0
-    version: 0.20.0
+    specifier: ^0.21.0
+    version: 0.21.0
   '@commitlint/cli':
     specifier: ^17.0.0
     version: 17.4.4
@@ -212,8 +212,8 @@ packages:
       '@jridgewell/gen-mapping': 0.1.1
       '@jridgewell/trace-mapping': 0.3.17
 
-  /@antfu/ni@0.20.0:
-    resolution: {integrity: sha512-mBgAuq2b0daSA/14LMyjEjaInD7/Zd7KVXZge7bQPKmtQJFqy9/pWBml6DMkMreeHQEomMtIbbeqReNJ/74kjA==}
+  /@antfu/ni@0.21.0:
+    resolution: {integrity: sha512-phPNXsOEQKbv8LbKTVIzT6Oczl1gG6GNwb62IFZqKxHZdVmKnafUZhaZms6AdpDej5BsFZWj2xFVISw9gjW2cQ==}
     hasBin: true
     dev: true
 
