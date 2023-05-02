@@ -2,7 +2,7 @@
   "name": "ts-nextjs-tailwind-starter",
   "version": "0.1.0",
   "private": true,
-  "packageManager": "pnpm@7.29.3",
+  "packageManager": "pnpm@7.32.2",
   "scripts": {
     "dev": "next dev -p 8080",
     "build": "next build",
