@@ -28,13 +28,20 @@ The most beautiful minimalist blog in modern built with Nextjs and tailwindcss.
 
 ## 🦄 Tech Stack
 
-- [Next.js](https://nextjs.org/) - The React Framework.
+- [Next.js 13](https://nextjs.org/) - The React Framework.
 - [Tailwind CSS](https://tailwindcss.com/) - A utility-first CSS framework for rapidly building custom user interfaces.
 - [mdx-bundler](https://github.com/kentcdodds/mdx-bundler) - Compile and bundle your MDX files and their dependencies. FAST.
 - [React 18.x](https://reactjs.org/) - A JavaScript library for building user interfaces.
 - [react-use](https://streamich.github.io/react-use/) - Collection of essential React Hooks.
-- [Recoil](https://recoiljs.org/) - An experimental state management framework for React.
 - [giscus](https://giscus.app/zh-CN) - A comment system powered by GitHub Discussions
+- [SWR](https://swr.vercel.app/) - React Hooks for data fetching.
+
+## :thought_balloon: Latest Posts
+
+<a href="https://yangchaoyi.vip/"><img src="https://media.giphy.com/media/SWoSkN6DxTszqIKEqv/giphy.gif" align="right" height="275" /></a>
+
+<!-- BLOG-POST-LIST:START -->
+<!-- BLOG-POST-LIST:END -->
 
 ## 🪴 Project Activity
 
@@ -45,6 +52,11 @@ The most beautiful minimalist blog in modern built with Nextjs and tailwindcss.
 Thank you to all the people who already contributed to my project!
 
 <a href="https://github.com/Chocolate1999/nextjs-tailwind-blog/graphs/contributors"><img src="https://github.com/Chocolate1999/nextjs-tailwind-blog/blob/main/CONTRIBUTORS.svg" /></a>
+
+## ☀️ Thanks
+
+- [theodorusclarence.com](https://github.com/theodorusclarence/theodorusclarence.com) - 💠 Personal website and blog made using Next.js, TypeScript, Tailwind CSS, MDX Bundler, and Prisma with PostgreSQL
+- [ts-nextjs-tailwind-starter](https://github.com/theodorusclarence/ts-nextjs-tailwind-starter) - 🔋 Next.js + Tailwind CSS + TypeScript starter and boilerplate packed with useful development features
 
 ## 📄 License
 

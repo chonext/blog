@@ -5,7 +5,7 @@ import Tag from '@/components/content/Tag';
 import CloudinaryImg from '@/components/images/CloudinaryImg';
 import UnstyledLink from '@/components/links/UnstyledLink';
 
-import { ILinkProps } from '@/store/links';
+import { ILinkProps } from '@/constants/links';
 
 const LinkCard: React.FC<ILinkProps> = ({
   name,
@@ -66,7 +66,7 @@ const LinkCard: React.FC<ILinkProps> = ({
           {avatar ? (
             <CloudinaryImg
               noStyle
-              className='pointer-events-none overflow-hidden rounded-full h-16 w-16 ring-2 ring-neutral-300'
+              className='pointer-events-none overflow-hidden rounded-full h-12 w-12 ring-2 ring-neutral-300'
               publicId={`links/avatar/${avatar}`}
               alt='Photo taken from unsplash'
               width={1200}

@@ -170,7 +170,7 @@ export default function IndexPage({
                 }}
                 className='text-sm !font-medium'
               >
-                Read in {isEnglish ? 'English' : 'Chinese'}
+                Read in {isEnglish ? 'Chinese' : 'English'}
               </Button>
               <SortListbox
                 selected={sortOrder}

@@ -4,7 +4,7 @@ import { AppProps } from 'next/app';
 import Router from 'next/router';
 import { ThemeProvider } from 'next-themes';
 import nProgress from 'nprogress';
-import { RecoilRoot } from 'recoil';
+import * as React from 'react';
 import { SWRConfig } from 'swr';
 
 import 'react-lite-youtube-embed/dist/LiteYouTubeEmbed.css';
@@ -14,24 +14,38 @@ import '@/styles/mdx.css';
 import '@/styles/dracula.css';
 import '@/styles/nprogress.css';
 
+import { getFromLocalStorage } from '@/lib/helper';
+
+import { blockDomainMeta } from '@/constants/env';
+
 Router.events.on('routeChangeStart', nProgress.start);
 Router.events.on('routeChangeError', nProgress.done);
 Router.events.on('routeChangeComplete', nProgress.done);
 
 function MyApp({ Component, pageProps }: AppProps) {
+  React.useEffect(() => {
+    if (
+      window.location.host !==
+        (process.env.NEXT_PUBLIC_BLOCK_DOMAIN_WHITELIST || 'yangchaoyi.vip') &&
+      blockDomainMeta
+    ) {
+      if (getFromLocalStorage('incrementMetaFlag') !== 'false') {
+        localStorage.setItem('incrementMetaFlag', 'false');
+        window.location.reload();
+      }
+    }
+  }, []);
   return (
-    <RecoilRoot>
-      <ThemeProvider attribute='class' enableSystem={false}>
-        <SWRConfig
-          value={{
-            fetcher: (url) => axios.get(url).then((res) => res.data),
-          }}
-        >
-          <Component {...pageProps} />
-          <Analytics />
-        </SWRConfig>
-      </ThemeProvider>
-    </RecoilRoot>
+    <ThemeProvider attribute='class' enableSystem={false}>
+      <SWRConfig
+        value={{
+          fetcher: (url) => axios.get(url).then((res) => res.data),
+        }}
+      >
+        <Component {...pageProps} />
+        <Analytics />
+      </SWRConfig>
+    </ThemeProvider>
   );
 }
 

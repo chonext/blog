@@ -1,6 +1,7 @@
 import clsx from 'clsx';
 import { InferGetStaticPropsType } from 'next';
 import * as React from 'react';
+import { SiBilibili, SiGithub } from 'react-icons/si';
 import { InView } from 'react-intersection-observer';
 
 import { trackEvent } from '@/lib/analytics';
@@ -32,12 +33,12 @@ export default function HomePage({
           <div className='md:mt-[120px]  text-left mt-[40px]'>
             <article className=''>
               <div className='flex flex-col items-start'>
-                <p
+                <Accent
                   className='mb-8 md:text-4xl text-[#555] dark:text-[#bbb] text-3xl'
                   data-fade='1'
                 >
                   超逸の博客
-                </p>
+                </Accent>
                 <p
                   className={clsxm(
                     'text-lg text-[#555] dark:text-[#bbb]',
@@ -106,11 +107,17 @@ export default function HomePage({
                 >
                   Find me on{' '}
                   <CustomLink href='https://github.com/Chocolate1999'>
-                    Github
+                    <div className='flex items-center gap-1'>
+                      <SiGithub />
+                      GitHub
+                    </div>
                   </CustomLink>{' '}
                   and{' '}
                   <CustomLink href='https://space.bilibili.com/351534170'>
-                    哔哩哔哩
+                    <div className='flex items-center gap-1'>
+                      <SiBilibili />
+                      Bilibili
+                    </div>
                   </CustomLink>
                   .
                 </p>

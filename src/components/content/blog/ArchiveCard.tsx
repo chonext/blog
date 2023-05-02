@@ -35,7 +35,7 @@ export default function ArchiveCard({
         className='block h-full rounded-md focus:outline-none focus-visible:ring focus-visible:ring-primary-300'
         href={`/blog/${post.slug}`}
       >
-        <div className='flex items-end p-4 mb:flex-col'>
+        <div className='flex items-end p-4 flex-col md:flex-row'>
           {/* blog_info */}
           <div className='w-full'>
             <h4 className='text-gray-800 dark:text-gray-100'>{post.title}</h4>

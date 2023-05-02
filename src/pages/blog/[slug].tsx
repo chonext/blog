@@ -143,7 +143,7 @@ export default function SingleBlogPage({
                     tipChildren={
                       <>
                         {meta.devtoViews.toLocaleString()} views on{' '}
-                        <CustomLink href='https://dev.to/theodorusclarence'>
+                        <CustomLink href='https://dev.to/chocolate'>
                           dev.to
                         </CustomLink>
                       </>
