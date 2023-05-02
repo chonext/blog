@@ -36,13 +36,6 @@ The most beautiful minimalist blog in modern built with Nextjs and tailwindcss.
 - [giscus](https://giscus.app/zh-CN) - A comment system powered by GitHub Discussions
 - [SWR](https://swr.vercel.app/) - React Hooks for data fetching.
 
-## :thought_balloon: Latest Posts
-
-<a href="https://yangchaoyi.vip/"><img src="https://media.giphy.com/media/SWoSkN6DxTszqIKEqv/giphy.gif" align="right" height="275" /></a>
-
-<!-- BLOG-POST-LIST:START -->
-<!-- BLOG-POST-LIST:END -->
-
 ## 🪴 Project Activity
 
 ![Alt](https://repobeats.axiom.co/api/embed/0d333a7111c72a0c7ed603bfab7298225a46a856.svg 'Repobeats analytics image')
