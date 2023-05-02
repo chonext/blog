@@ -134,7 +134,7 @@ const footerLinks: { href: string; text: string; tooltip: React.ReactNode }[] =
       tooltip: 'Note collection of books that I read',
     },
     {
-      href: 'https:/yangchaoyi.vip/um',
+      href: 'https://analytics.umami.is/share/gmqt0gLnaqPGkpoF/yangchaoyi.vip',
       text: 'Analytics',
       tooltip: 'yangchaoyi.vip views and visitors analytics',
     },

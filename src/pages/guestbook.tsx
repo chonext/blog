@@ -23,7 +23,9 @@ export default function GuestbookPage() {
             <p className='mt-2 text-gray-700 dark:text-gray-200'>
               Leave whatever you like to say—message, appreciation, suggestions.
               If you got some questions, you can leave them on the{' '}
-              <CustomLink href=''>AMA discussion</CustomLink>
+              <CustomLink href='https://github.com/chonext/blog/discussions/73'>
+                AMA discussion
+              </CustomLink>
             </p>
             <figure className='mt-12'>
               <Comment />

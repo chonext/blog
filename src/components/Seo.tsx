@@ -4,12 +4,11 @@ import { useRouter } from 'next/router';
 import { openGraph } from '@/lib/helper';
 
 const defaultMeta = {
-  title: '一百个Chocolate',
-  siteName: '一百个Chocolate',
+  title: '超逸の博客',
+  siteName: '超逸の博客',
   description:
     'Chocolate 个人博客，JS，TS，LeetCode，Vue，React，算法爱好者。座右铭：学如逆水行舟，不进则退！',
-  keywords:
-    'Chocolate 个人博客，JS，TS，LeetCode，Vue，React，算法爱好者。座右铭：学如逆水行舟，不进则退！',
+  keywords: 'Next.js,React,Vue3,Blog,前端,b站up主',
   url: 'https://yangchaoyi.vip',
   image: '',
   type: 'website',
@@ -49,6 +48,7 @@ export default function Seo(props: SeoProps) {
       <title>{meta.title}</title>
       <meta name='robots' content={meta.robots} />
       <meta content={meta.description} name='description' />
+      <meta name='baidu-site-verification' content='codeva-9KOLDRVHSI' />
       <meta property='og:url' content={`${meta.url}${router.asPath}`} />
       <link
         rel='canonical'
@@ -62,7 +62,7 @@ export default function Seo(props: SeoProps) {
       <meta name='image' property='og:image' content={meta.image} />
       {/* Twitter */}
       <meta name='twitter:card' content='summary_large_image' />
-      <meta name='twitter:site' content='@th_clarence' />
+      <meta name='twitter:site' content='@ycyChocolate' />
       <meta name='twitter:title' content={meta.title} />
       <meta name='twitter:description' content={meta.description} />
       <meta name='twitter:image' content={meta.image} />
@@ -74,11 +74,7 @@ export default function Seo(props: SeoProps) {
             property='og:publish_date'
             content={meta.date}
           />
-          <meta
-            name='author'
-            property='article:author'
-            content='Theodorus Clarence'
-          />
+          <meta name='author' property='article:author' content='Choi Yang' />
         </>
       )}
 

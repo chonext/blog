@@ -36,7 +36,7 @@ export default function HomePage({
                   className='mb-8 md:text-4xl text-[#555] dark:text-[#bbb] text-3xl'
                   data-fade='1'
                 >
-                  一百个Chocolate
+                  超逸の博客
                 </p>
                 <p
                   className={clsxm(

@@ -25,10 +25,10 @@ export function openGraph({
   if (isBlog) {
     const ogBanner = banner ? encodeURIComponent(banner.trim()) : undefined;
 
-    return `https://og-chodocs.vercel.app/api/blog?templateTitle=${ogTemplateTitle}&banner=${ogBanner}`;
+    return `https://og.yangchaoyi.vip/api/blog?templateTitle=${ogTemplateTitle}&banner=${ogBanner}`;
   }
 
-  return `https://og-chodocs.vercel.app/api/general?siteName=${ogSiteName}&description=${ogDesc}&logo=${ogLogo}${
+  return `https://og.yangchaoyi.vip/api/general?siteName=${ogSiteName}&description=${ogDesc}&logo=${ogLogo}${
     ogTemplateTitle ? `&templateTitle=${ogTemplateTitle}` : ''
   }`;
 }
