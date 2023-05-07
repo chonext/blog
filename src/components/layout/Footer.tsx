@@ -184,7 +184,7 @@ const socials: Social[] = [
     id: 'Bilibili',
     text: (
       <>
-        Find me on <Accent className='font-medium'>Linkedin</Accent>
+        Find me on <Accent className='font-medium'>Bilibili</Accent>
       </>
     ),
   },

@@ -36,6 +36,10 @@ li {
   margin-top: 0;
 }
 
+.prose > ul {
+  padding-left: 4px;
+}
+
 .prose blockquote p:first-of-type::before,
 .prose blockquote p:last-of-type::after {
   content: '';
@@ -62,6 +66,29 @@ li {
   border-style: solid;
   border-width: 0 0 1px 0;
   border-image: linear-gradient(to right, #00ff9480, #00e0f380, #00c4fd80) 1;
+}
+
+.mdx.prose {
+  @apply dark:text-neutral-400;
+}
+
+.mdx.prose table {
+  width: 100%;
+}
+.mdx.prose table tr,
+th,
+td {
+  border: 1px solid #ccc;
+}
+
+.mdx.prose table tr th,
+td {
+  padding: 8px 16px;
+}
+
+.mdx.prose table tbody tr:nth-child(2n) {
+  background-color: #f7f9fc;
+  @apply dark:bg-neutral-600/75;
 }
 
 .mdx.prose h2 {

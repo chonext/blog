@@ -1,6 +1,5 @@
 import clsx from 'clsx';
 
-import Accent from '@/components/Accent';
 import Tag from '@/components/content/Tag';
 import CloudinaryImg from '@/components/images/CloudinaryImg';
 import UnstyledLink from '@/components/links/UnstyledLink';
@@ -57,7 +56,7 @@ const LinkCard: React.FC<ILinkProps> = ({
                 className='bg-opacity-80 dark:!bg-opacity-60'
                 key={tag}
               >
-                <Accent>{tag}</Accent>
+                {tag}
               </Tag>
             ))}
           </div>

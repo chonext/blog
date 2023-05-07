@@ -11,7 +11,7 @@ import useLoaded from '@/hooks/useLoaded';
 
 import Accent from '@/components/Accent';
 import Button from '@/components/buttons/Button';
-import GridCard from '@/components/content/blog/BlogCard';
+import BlogCard from '@/components/content/blog/BlogCard';
 import SubscribeCard from '@/components/content/blog/SubscribeCard';
 import ContentPlaceholder from '@/components/content/ContentPlaceholder';
 import Tag, { SkipNavTag } from '@/components/content/Tag';
@@ -184,7 +184,7 @@ export default function IndexPage({
             >
               {currentPosts.length > 0 ? (
                 currentPosts.map((post) => (
-                  <GridCard
+                  <BlogCard
                     key={post.slug}
                     post={post}
                     checkTagged={checkTagged}
