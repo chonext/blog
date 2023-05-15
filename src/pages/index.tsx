@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { InferGetStaticPropsType } from 'next';
 import * as React from 'react';
-import { SiBilibili, SiGithub } from 'react-icons/si';
+import { SiBilibili, SiGithub, SiTwitter, SiYoutube } from 'react-icons/si';
 import { InView } from 'react-intersection-observer';
 
 import { trackEvent } from '@/lib/analytics';
@@ -98,29 +98,41 @@ export default function HomePage({
                   className='mx-auto md:my-[2em] h-0 w-[50px] border-t-[1px] border-[#7d7d7d4d] my-[1em]'
                   data-fade='4'
                 />
-                <p
+                <div
                   className={clsxm(
-                    ' mt-2 text-[#555] dark:text-[#bbb]',
+                    'mt-2 text-[#555] dark:text-[#bbb]',
                     'lg:text-xl text-left text-lg'
                   )}
                   data-fade='4'
                 >
-                  Find me on{' '}
-                  <CustomLink href='https://github.com/Chocolate1999'>
-                    <div className='flex items-center gap-1'>
-                      <SiGithub />
-                      GitHub
-                    </div>
-                  </CustomLink>{' '}
-                  and{' '}
-                  <CustomLink href='https://space.bilibili.com/351534170'>
-                    <div className='flex items-center gap-1'>
-                      <SiBilibili />
-                      Bilibili
-                    </div>
-                  </CustomLink>
-                  .
-                </p>
+                  Find me on
+                  <div className='lg:my-4 my-2 gap-4 flex flex-wrap items-center'>
+                    <CustomLink href='https://github.com/Chocolate1999'>
+                      <div className='flex items-center gap-1'>
+                        <SiGithub />
+                        GitHub
+                      </div>
+                    </CustomLink>
+                    <CustomLink href='https://www.youtube.com/@chocolate1999'>
+                      <div className='flex items-center gap-1'>
+                        <SiYoutube />
+                        YouTube
+                      </div>
+                    </CustomLink>
+                    <CustomLink href='https://space.bilibili.com/351534170'>
+                      <div className='flex items-center gap-1'>
+                        <SiBilibili />
+                        Bilibili
+                      </div>
+                    </CustomLink>
+                    <CustomLink href='https://twitter.com/ycyChocolate'>
+                      <div className='flex items-center gap-1'>
+                        <SiTwitter />
+                        Twitter
+                      </div>
+                    </CustomLink>
+                  </div>
+                </div>
 
                 <p
                   className={clsxm(
@@ -197,7 +209,11 @@ export async function getStaticProps() {
   generateRss();
   const blogs = await getAllFilesFrontmatter('blog');
 
-  const featuredPosts = getFeatured(blogs, ['15-job-summary', '05-hundsun']);
+  const featuredPosts = getFeatured(blogs, [
+    '15-job-summary',
+    '05-hundsun',
+    'autumn-tips-list',
+  ]);
 
   return {
     props: { featuredPosts },

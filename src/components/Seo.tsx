@@ -79,6 +79,7 @@ export default function Seo(props: SeoProps) {
       )}
 
       {/* Favicons */}
+      <link rel='icon' type='image/x-icon' href='/favicon.ico' />
       {favicons.map((linkProps) => (
         <link key={linkProps.href} {...linkProps} />
       ))}

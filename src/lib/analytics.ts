@@ -15,7 +15,6 @@ type TrackEvent = (
 
 export const trackEvent: TrackEvent = (...args) => {
   if (window.umami && typeof window.umami.trackEvent === 'function') {
-    // @ts-expect-error umami is not typed
     window.umami.trackEvent(...args);
   }
 };
