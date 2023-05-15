@@ -48,8 +48,9 @@ Thank you to all the people who already contributed to my project!
 
 ## ☀️ Thanks
 
-- [theodorusclarence.com](https://github.com/theodorusclarence/theodorusclarence.com) - 💠 Personal website and blog made using Next.js, TypeScript, Tailwind CSS, MDX Bundler, and Prisma with PostgreSQL
-- [ts-nextjs-tailwind-starter](https://github.com/theodorusclarence/ts-nextjs-tailwind-starter) - 🔋 Next.js + Tailwind CSS + TypeScript starter and boilerplate packed with useful development features
+- [theodorusclarence.com](https://github.com/theodorusclarence/theodorusclarence.com) 
+- [ts-nextjs-tailwind-starter](https://github.com/theodorusclarence/ts-nextjs-tailwind-starter)
+- [antfu.me](https://github.com/antfu/antfu.me)
 
 ## 📄 License
 
