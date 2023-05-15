@@ -48,7 +48,7 @@ Thank you to all the people who already contributed to my project!
 
 ## ☀️ Thanks
 
-- [theodorusclarence.com](https://github.com/theodorusclarence/theodorusclarence.com) 
+- [theodorusclarence.com](https://github.com/theodorusclarence/theodorusclarence.com)
 - [ts-nextjs-tailwind-starter](https://github.com/theodorusclarence/ts-nextjs-tailwind-starter)
 - [antfu.me](https://github.com/antfu/antfu.me)
 
