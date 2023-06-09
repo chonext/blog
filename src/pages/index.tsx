@@ -37,7 +37,7 @@ export default function HomePage({
                   className='mb-8 md:text-4xl text-[#555] dark:text-[#bbb] text-3xl'
                   data-fade='1'
                 >
-                  超逸の博客
+                  阿宇の博客
                 </Accent>
                 <p
                   className={clsxm(
@@ -46,8 +46,7 @@ export default function HomePage({
                   )}
                   data-fade='1'
                 >
-                  Hey, I am Chocolate, the 21st front-end development, currently
-                  moving bricks in a large factory.
+                  Hey, I am Derek, is a down-and-out civil engineering student who loves everything related to programming.
                 </p>
                 <p
                   className={clsxm(
@@ -56,7 +55,7 @@ export default function HomePage({
                   )}
                   data-fade='3'
                 >
-                  JS, TS, LeetCode, Vue, React, algorithm lovers.
+                  JS, Python, LeetCode, C++, AutoCAD, PKPM, HTML lovers.
                 </p>
                 <hr
                   className='mx-auto md:my-[2em] h-0 w-[50px] border-t-[1px] border-[#7d7d7d4d] my-[1em]'
@@ -69,9 +68,8 @@ export default function HomePage({
                   )}
                   data-fade='3'
                 >
-                  After experiencing high school life, I understand that
-                  "fortunately, the cold window has been bitter for several
-                  years, and since then there are many warm springs"
+                  It is only after graduating from university that people understand a saying: 
+                  "How cold is the age we live in"
                 </p>
                 <p
                   className={clsxm(
@@ -80,9 +78,8 @@ export default function HomePage({
                   )}
                   data-fade='3'
                 >
-                  And through college life, I understand that "learning is like
-                  sailing against the current, if you don't advance, you will
-                  retreat".
+                  But people still can't give up, 
+                  and I will still move forward on the road of chasing my dreams.
                 </p>
                 <p
                   className={clsxm(
@@ -107,25 +104,25 @@ export default function HomePage({
                 >
                   Find me on
                   <div className='lg:my-4 my-2 gap-4 flex flex-wrap items-center'>
-                    <CustomLink href='https://github.com/Chocolate1999'>
+                    <CustomLink href='https://github.com/sunhaha520'>
                       <div className='flex items-center gap-1'>
                         <SiGithub />
                         GitHub
                       </div>
                     </CustomLink>
-                    <CustomLink href='https://www.youtube.com/@chocolate1999'>
+                    <CustomLink href='https://www.youtube.com/channel/UCtaaKLR2GU7J0rIRQmybWXw'>
                       <div className='flex items-center gap-1'>
                         <SiYoutube />
                         YouTube
                       </div>
                     </CustomLink>
-                    <CustomLink href='https://space.bilibili.com/351534170'>
+                    <CustomLink href='https://space.bilibili.com/514080334'>
                       <div className='flex items-center gap-1'>
                         <SiBilibili />
                         Bilibili
                       </div>
                     </CustomLink>
-                    <CustomLink href='https://twitter.com/ycyChocolate'>
+                    <CustomLink href='https://twitter.com/sunhaha520'>
                       <div className='flex items-center gap-1'>
                         <SiTwitter />
                         Twitter
