@@ -44,8 +44,6 @@ The most beautiful minimalist blog in modern built with Nextjs and tailwindcss.
 
 Thank you to all the people who already contributed to my project!
 
-<a href="https://github.com/Chocolate1999/nextjs-tailwind-blog/graphs/contributors"><img src="https://github.com/Chocolate1999/nextjs-tailwind-blog/blob/main/CONTRIBUTORS.svg" /></a>
-
 ## ☀️ Thanks
 
 - [theodorusclarence.com](https://github.com/theodorusclarence/theodorusclarence.com)
