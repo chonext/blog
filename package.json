@@ -24,7 +24,7 @@
     "@vercel/analytics": "^1.0.1",
     "axios": "^1.4.0",
     "cloudinary-build-url": "^0.2.4",
-    "clsx": "^1.2.1",
+    "clsx": "^2.0.0",
     "date-fns": "^2.30.0",
     "esbuild": "^0.17.19",
     "intercept-stdout": "^0.1.2",
