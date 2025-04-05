@@ -1,0 +1,124 @@
+---
+title: 字节跳动-飞书
+description: 字节跳动-飞书前端秋招面试总结与复盘
+publishedAt: '2020-09-29'
+lastUpdated: '2022-09-18'
+banner: 'bytedance_znj1ao'
+tags: 'interview'
+---
+
+## 字节跳动-飞书面经
+
+### 介绍
+
+9 月 20 日晚 7 点进行了笔试，有 3 道单选题，2 道多选题，然后 3 道编程题，3 道编程题全 A 了，自然收到了面试邀请，约了 9 月 29 日下午 5 点一面。
+
+### 一面
+
+#### 面经
+
+1、自我介绍（提及了自己恒生实习经历和写博客习惯）
+
+2、说一下你的个人经历（详细讲了实习这一块做了什么）
+
+3、实习中表格渲染具体怎么做的，说一说
+
+4、Vuex 实现原理
+
+> 这里答的不是很好，面试官跳过了。
+
+5、Vue 组件通信有哪些？说一说
+
+> 只答了父子组件，兄弟组件，自定义事件，还有一些忘记了。
+
+6、实习项目登录你是怎么做的？token 怎么存，如果要让登录状态在新的 tab 页面保持，你怎么做？
+
+> cookie
+
+7、如果避免用户通过 JS 脚本获取 cookie
+
+8、普通函数和箭头函数的区别
+
+> 答的不是很好，面试官跳过了
+
+9、箭头函数可以作为构造函数吗
+
+> 回答了不可以，但是可能答的不是特别好
+
+10、说一下你对原型和原型链的理解？
+
+11、说说你对 TCP 的理解，说说三次握手
+
+12、考察 Event Loop（事件循环）机制，写出输出结果：
+
+```javascript
+console.log('begin');
+setTimeout(() => {
+  console.log('setTimeout 1');
+  Promise.resolve()
+    .then(() => {
+      console.log('promise 1');
+      setTimeout(() => {
+        console.log('setTimeout2 between promise1&2');
+      });
+    })
+    .then(() => {
+      console.log('promise 2');
+    });
+}, 0);
+
+console.log('end');
+```
+
+跑一下，输出结果如下：
+
+```javascript
+begin
+end
+setTimeout 1
+promise 1
+promise 2
+setTimeout2 between promise1&2
+```
+
+![](https://img-blog.csdnimg.cn/20200929214202499.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MjQyOTcxOA==,size_16,color_FFFFFF,t_70#pic_center)
+
+13、首屏加载慢你会怎么考察？
+
+> 这里面试官又改了一下，让我去说前端性能优化
+
+- 减少 http 请求
+- 引用 CDN
+- 异步加载
+- 服务端渲染
+- 浏览器缓存优化
+
+14、说说你对异步加载的理解（说了 defer 和 async）
+
+15、说说你对浏览器缓存的理解（强缓存、协商缓存），后续问了缓存的优先级
+
+16、手撕：实现 deepClone
+
+> 其中还问了 undefined.toString() 会是什么结果，这个在博客 JS 知识梳理里面整理过，直接回答了会报错
+
+还问了如下代码输出结果：
+
+```javascript
+console.log(Object.prototype.toString.call([1, 2, 3])); // [object Array]
+```
+
+17、算法题：合并两个有序数组 mergeSortedArray([0,3,5], [1,2,4]) // [0,1,2,3,4,5]
+
+18、还有什么想问我的吗？
+
+#### 感受
+
+字节面试依旧是体验很好，面试官单独在一个休息室面的，没有任何外界干扰。最后问了面试官关于飞书，然后请教了一下对于前端学习方法。应该还有下一面，面试官说了后面会有同事来沟通。
+
+### 后续
+
+> 待更新
+
+### 总结
+
+> 待更新

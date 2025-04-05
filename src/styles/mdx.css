@@ -1,0 +1,154 @@
+.prose {
+  @apply lg:max-w-[50rem] xl:max-w-[65rem];
+}
+
+.prose p,
+li {
+  @apply dark:text-gray-400;
+  margin-bottom: 1rem;
+  line-height: 2;
+}
+
+.shadow {
+  box-shadow: 0 3px 8px 6px rgba(7, 17, 27, 0.06);
+}
+
+.prose code:not(:where([data-code-type='code-block'])) {
+  font-size: 85%;
+  padding: 0.2em 0.3em;
+  color: #687168;
+  background-color: #def5df;
+  border-radius: 4px;
+  font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  @apply px-1 py-1 dark:border-gray-600 dark:bg-[#efefef];
+}
+
+.prose a {
+  text-decoration: none;
+}
+
+.prose > ol > li > :last-child,
+.prose > ul > li > :last-child {
+  margin-bottom: 0;
+}
+.prose > ol > li > :first-child,
+.prose > ul > li > :first-child {
+  margin-top: 0;
+}
+
+.prose > ul {
+  padding-left: 4px;
+}
+
+.prose blockquote p:first-of-type::before,
+.prose blockquote p:last-of-type::after {
+  content: '';
+}
+
+.prose blockquote {
+  border-style: solid;
+  border-width: 0 0 0 0.25em;
+  color: #777;
+  border-color: #49b1f5;
+  background-color: rgba(73, 177, 245, 0.1);
+  margin-bottom: 1rem;
+  padding: 0 1em;
+}
+
+.prose blockquote p {
+  color: #777;
+  padding: 0.5rem 0;
+  line-height: 2;
+  @apply dark:text-gray-500;
+}
+
+.prose hr {
+  border-style: solid;
+  border-width: 0 0 1px 0;
+  border-image: linear-gradient(to right, #00ff9480, #00e0f380, #00c4fd80) 1;
+}
+
+.mdx.prose {
+  @apply dark:text-neutral-400;
+}
+
+.mdx.prose table {
+  width: 100%;
+}
+.mdx.prose table tr,
+th,
+td {
+  border: 1px solid #ccc;
+}
+
+.mdx.prose table tr th,
+td {
+  padding: 8px 16px;
+}
+
+.mdx.prose table tbody tr:nth-child(2n) {
+  background-color: #f7f9fc;
+  @apply dark:bg-neutral-600/75;
+}
+
+.mdx.prose h2 {
+  font-size: 20px;
+}
+
+.mdx.prose h3 {
+  font-size: 1.3em;
+}
+
+.mdx.prose :where(h1, h2, h3, h4) {
+  color: #1f2d3d;
+  scroll-margin-top: 100px;
+  position: relative;
+  display: block;
+  width: fit-content;
+  margin-right: 0.5rem;
+  margin-bottom: 1rem;
+  margin-top: 1.5rem;
+  @apply dark:text-[#fff] dark:opacity-90;
+}
+
+.mdx.prose :where(h1, h2, h3, h4) > a {
+  border-bottom: none;
+}
+
+.mdx.prose :where(h1, h2, h3, h4):hover {
+  color: #3385ff;
+}
+
+/* Custom Heading Style for Projects */
+.mdx.prose.projects blockquote {
+  font-style: normal;
+}
+.mdx.prose.projects blockquote:first-of-type h2 {
+  margin-top: 1rem;
+}
+.mdx.prose.projects blockquote.with-icons h2 {
+  margin-bottom: 0;
+}
+
+/* Apply shadow to Youtube Embed */
+.mdx.prose .yt-lite {
+  @apply overflow-hidden rounded shadow-sm dark:shadow-none;
+}
+
+/** HASH ANCHOR */
+.hash-anchor {
+  @apply inset-y-0 w-full;
+  position: absolute;
+  background-image: none;
+  transition: none;
+}
+
+.hash-anchor:hover:after,
+.hash-anchor:focus:after {
+  visibility: visible;
+}
+
+.hash-anchor:after {
+  @apply invisible absolute -right-5 top-1/2 -translate-y-1/2 text-lg text-primary-400 dark:text-primary-300;
+  content: '#';
+}

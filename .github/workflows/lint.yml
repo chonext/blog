@@ -1,0 +1,120 @@
+# https://github.com/kentcdodds/kentcdodds.com/blob/main/.github/workflows/deployment.yml
+name: Code Check
+on:
+  push:
+    branches:
+      - main
+  pull_request: {}
+
+jobs:
+  lint:
+    name: ⬣ ESLint
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🛑 Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.11.0
+
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v3
+
+      - name: ⚡ Install pnpm
+        uses: pnpm/action-setup@v2
+
+      - name: ⎔ Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: pnpm
+
+      - name: ⎔ Setup
+        run: npm i -g @antfu/ni
+
+      - name: 📥 Download deps
+        run: nci
+
+      - name: 🔬 Lint
+        run: nr lint:strict
+
+  typecheck:
+    name: ʦ TypeScript
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🛑 Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.11.0
+
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v3
+
+      - name: ⚡ Install pnpm
+        uses: pnpm/action-setup@v2
+
+      - name: ⎔ Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: pnpm
+
+      - name: ⎔ Setup
+        run: npm i -g @antfu/ni
+
+      - name: 📥 Download deps
+        run: nci
+
+      - name: 🔎 Type check
+        run: nr typecheck
+
+  prettier:
+    name: 💅 Prettier
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🛑 Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.11.0
+
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v3
+
+      - name: ⚡ Install pnpm
+        uses: pnpm/action-setup@v2
+
+      - name: ⎔ Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: pnpm
+
+      - name: ⎔ Setup
+        run: npm i -g @antfu/ni
+
+      - name: 📥 Download deps
+        run: nci
+
+      - name: 🔎 Type check
+        run: nr format:check
+
+  test:
+    name: 🃏 Test
+    runs-on: ubuntu-latest
+    steps:
+      - name: 🛑 Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.11.0
+
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v3
+
+      - name: ⚡ Install pnpm
+        uses: pnpm/action-setup@v2
+
+      - name: ⎔ Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.x
+          cache: pnpm
+
+      - name: ⎔ Setup
+        run: npm i -g @antfu/ni
+
+      - name: 📥 Download deps
+        run: nci
+
+      - name: 🃏 Run jest
+        run: nr test

@@ -1,0 +1,173 @@
+---
+title: 快手-效率工程
+description: 快手-效率工程前端秋招面试总结与复盘
+publishedAt: '2020-09-10'
+lastUpdated: '2022-09-18'
+banner: 'xiaoyu-li-IYYYLgMptNY-unsplash_ik6qye'
+tags: 'interview'
+---
+
+## 快手-效率工程面经
+
+### 介绍
+
+8 月 25 日（周二）投递，在 9 月 8 日上午收到 HR 电话，告知简历通过了，约 9 月 10 日上午 11 点面试，整个面试时间 1 个小时左右。
+
+### 一面
+
+#### 面经
+
+1、自我介绍
+2、你刚刚提到了项目中防抖 `debounce` ，你知道实现原理是什么吗？说一说
+
+> 这个问题是项目中用到过，然后自我介绍提了一下，就说了一下原理，面试官居然不要我手撕...
+
+3、你家乡在哪？面试岗位在北京，有没有城市要求吗？
+
+> 回答：反正在湖南，去哪都是很远...
+
+4、实现一个函数，以字符串形式（要求字母小写）返回参数类型
+
+```javascript
+// null => 'null' undefined=>'undefined'
+function getArgType(arg) {}
+```
+
+实现：
+
+```javascript
+/* 编程题：以字符串形式返回参数类型  */
+
+function getArgType(arg) {
+  let str = Object.prototype.toString.call(arg).slice(8, -1);
+  let res = str[0].toLowerCase() + str.substr(1);
+  return res;
+}
+console.log(getArgType(null));
+console.log(getArgType(undefined));
+
+const a = 1;
+const b = new Number(1);
+console.log(a === b);
+console.log(getArgType(a));
+console.log(getArgType(b));
+console.log(getArgType(new Date(2020, 9, 10)));
+console.log(getArgType(new RegExp(/^\s+|\s$/g)));
+```
+
+后面终点问了 `1` 和 `new Number(1)` 有什么区别，这里没答上来。
+
+> 对象 Number、String、Boolean 分别对应数字、字符串、布尔值，可以通过这三个对象把原始类型的值变成（包装成）对象
+
+```javascript
+var v1 = new Number(123);
+var v2 = new String('abc');
+var v3 = new Boolean(true);
+
+typeof v1; // "object"
+typeof v2; // "object"
+typeof v3; // "object"
+
+v1 === 123; // false
+v1 == 123; // true
+```
+
+但是要注意 `new Boolean` 的用法，只有当 `new Boolean` 的参数值为 `null` 或者 `undefined` 时，求值转换的原始的值才是 `false` ，其他情况都是 `true`
+
+5、给你一个数组 `[1,3,2,5]` 你有多少种方法，求得最大值，说一说
+
+> 一下没 get 到面试官的点，我想着除了遍历比较或排序还能怎么做。但后面不断引导后发现可以用各种数组 `api` ，然后就答了 `sort`，`map`，`reduce`，`for循环` ，`shift`，`pop`，`forEach`，`Math.max(...arr)`
+
+后面面试官说了用 `apply`，没使用过，补充一下：
+
+```javascript
+var arr = [6, 4, 1, 8, 2, 11, 23];
+console.log(Math.max.apply(null, arr));
+```
+
+6、实现如下效果：当你点击 `ul` 下面某个 `li`后（多个 `ui`），打印对应索引值（可以为 `0` 或 `1`）
+
+```javascript
+<ul><li></li>........</ul>
+<ul><li></li>........</ul>
+<ul><li></li>........</ul>
+```
+
+最终实现如下，一开始我是直接 `querySelectorAll`所有的 `li`，但是会给所有 `li`绑定事件，于是面试官说考虑使用事件代理，然后提示 `e.target`（当时没写出来，现在补充一下）
+
+```javascript
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>编程题：ul底下li索引值（多个ul）</title>
+  </head>
+  <body>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+    </ul>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+    </ul>
+    <script>
+      let list = document.getElementsByTagName('ul')
+      for (let i = 0; i < list.length; i++) {
+        list[i].addEventListener('click', (e) => {
+          let target = e.target
+          // console.log(target)
+          if (target.tagName.toLowerCase() === 'li') {
+            let liList = list[i].getElementsByTagName('li')
+            // console.log(liList)
+            // getElementsByTagName方法获取到的元素列表不是数组，
+            // 和函数的arguments一样是一种类数组类型，不可以直接使用数组的方法。
+            let idx = Array.prototype.indexOf.call(liList, target)
+            /* 或者采用如下方式，将类数组转换成数组，然后使用indexOf方法 */
+            // let idx = Array.from(liList).indexOf(target)
+            console.log(liList)
+            console.log(idx)
+          }
+        })
+      }
+    </script>
+  </body>
+</html>
+```
+
+7、使用 `vue` 封装一个组件，实现倒计时的功能
+
+```javascript
+倒计时（一个 button 按钮，有下述三种状态）
+（开始-》暂停-》继续）
+
+{count}
+按钮
+```
+
+<a href='https://blog.csdn.net/qq_42778001/article/details/104683996'>
+  参考：vue封装倒计时组件
+</a>
+
+8、你还有什么想问我的吗？
+
+#### 感受
+
+问了部门是效率工程，然后主要业务是做公司内部系统，比如各种流程处理，请假那些，然后还提到了公司封装内部聊天工具，类似于企业微信那种。然后还问了技术栈，主要用 `React + Ts` ，然后面试官说了技术栈都不是太大问题，主要还是 `js` 能力
+
+最后，问了一下多久会有面试结果，面试官说一天之内给结果。
+
+### 后续
+
+> 待更新
+
+### 总结
+
+> 待更新
